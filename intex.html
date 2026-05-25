@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>ThumbnailLab — Free YouTube Thumbnail Preview Tool for All Devices</title>
+<meta name="description" content="Free YouTube thumbnail preview tool. See exactly how your thumbnail looks on Desktop, Mobile, TV, Search and Homepage — before uploading. Get instant CTR score and improvement tips.">
+<meta name="keywords" content="youtube thumbnail preview, thumbnail checker, youtube thumbnail size, thumbnail preview tool, youtube thumbnail tester, CTR thumbnail, thumbnail analyzer free">
+<meta name="author" content="Raghav Gupta">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0d0d0f">
+<link rel="canonical" href="https://thumbnaillab.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ThumbnailLab — Free YouTube Thumbnail Preview Tool">
+<meta property="og:description" content="Preview your YouTube thumbnail on Desktop, Mobile, TV and Search results instantly. Free CTR score included.">
+<meta property="og:url" content="https://thumbnaillab.app/">
+<meta property="og:image" content="https://thumbnaillab.app/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ThumbnailLab — Free YouTube Thumbnail Preview">
+<meta name="twitter:description" content="See how your thumbnail looks on every device before publishing. Free CTR score included.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ThumbnailLab","url":"https://thumbnaillab.app","description":"Free YouTube thumbnail preview tool for Desktop, Mobile, TV and Search","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d0f;--bg2:#141417;--bg3:#1c1c21;--bg4:#242429;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --accent:#e8ff47;--accent2:#ff6b47;--accent3:#47c8ff;
+  --text:#f0f0f0;--text2:#9898a8;--text3:#5a5a6a;
+  --radius:12px;--radius-lg:16px;
+  --fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'DM Mono',monospace;
+  --sidebar-w:300px;--header-h:54px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ── TOP AD BANNER ── */
+.ad-top{width:100%;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:90px;padding:8px 16px;overflow:hidden}
+
+/* ── HEADER ── */
+header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:var(--header-h);border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(13,13,15,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:200}
+.logo{font-family:var(--fh);font-weight:800;font-size:18px;letter-spacing:-0.5px}
+.logo span{color:var(--accent)}
+.hdr-right{display:flex;align-items:center;gap:10px}
+.badge{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:3px 10px;font-size:11px;font-family:var(--fm);color:var(--text2)}
+.mob-nav-btn{display:none;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:6px 10px;cursor:pointer;color:var(--text2);font-size:13px;align-items:center;gap:6px}
+
+/* ── LAYOUT ── */
+.app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;flex:1}
+
+/* ── SIDEBAR ── */
+.sidebar{border-right:1px solid var(--border);padding:20px 16px;display:flex;flex-direction:column;gap:18px;overflow-y:auto;height:calc(100vh - var(--header-h));position:sticky;top:var(--header-h);scrollbar-width:thin;scrollbar-color:var(--bg4) transparent}
+.sidebar.mob-open{display:flex}
+.slabel{font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+
+/* ── UPLOAD ── */
+.upload-zone{border:1.5px dashed var(--border2);border-radius:var(--radius-lg);padding:24px 14px;text-align:center;cursor:pointer;transition:border-color 0.2s,background 0.2s;position:relative;background:var(--bg2)}
+.upload-zone:hover,.upload-zone.drag-over{border-color:var(--accent);background:rgba(232,255,71,0.03)}
+.upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.uico{width:36px;height:36px;margin:0 auto 10px;background:var(--bg3);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.uico svg{width:17px;height:17px;stroke:var(--text2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.upload-zone p{font-size:13px;color:var(--text2)}
+.upload-zone p strong{color:var(--accent);font-weight:500}
+.upload-zone .hint{font-size:11px;color:var(--text3);margin-top:5px;font-family:var(--fm)}
+
+/* ── THUMB PREVIEW ── */
+.tp{border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;background:var(--bg3)}
+.tp img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ── SCORE ── */
+.score-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px}
+.score-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.score-num{font-family:var(--fh);font-size:34px;font-weight:800;line-height:1}
+.score-lbl{font-size:10px;font-family:var(--fm);color:var(--text3);text-transform:uppercase;margin-top:2px}
+.score-ring{width:50px;height:50px}
+.score-ring svg{transform:rotate(-90deg)}
+.sbars{display:flex;flex-direction:column;gap:7px}
+.sbar-row{display:flex;align-items:center;gap:8px}
+.sbar-row .sbar-label{font-size:11px;color:var(--text2);width:80px;flex-shrink:0}
+.sbar-track{flex:1;height:4px;background:var(--bg4);border-radius:2px;overflow:hidden}
+.sbar-fill{height:100%;border-radius:2px;transition:width 0.6s cubic-bezier(0.34,1.56,0.64,1)}
+.sbar-row .sbar-pct{font-family:var(--fm);font-size:10px;color:var(--text3);width:28px;text-align:right}
+
+/* ── SUGGESTIONS ── */
+.sugs{display:flex;flex-direction:column;gap:7px}
+.sug{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:10px 12px;display:flex;gap:9px;align-items:flex-start}
+.sug.good{border-color:rgba(71,200,255,0.2);background:rgba(71,200,255,0.04)}
+.sug.warn{border-color:rgba(255,107,71,0.2);background:rgba(255,107,71,0.04)}
+.sug.info{border-color:rgba(232,255,71,0.15);background:rgba(232,255,71,0.03)}
+.sug-ico{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.sug-ico.g{background:rgba(71,200,255,0.15)}
+.sug-ico.w{background:rgba(255,107,71,0.15)}
+.sug-ico.i{background:rgba(232,255,71,0.12)}
+.sug-ico svg{width:12px;height:12px;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.sug-txt{font-size:12px;color:var(--text2);line-height:1.5}
+.sug-txt strong{color:var(--text);font-weight:500;display:block;margin-bottom:1px;font-size:12px}
+
+/* ── TOGGLE ── */
+.toggle-row{display:flex;align-items:center;justify-content:space-between}
+.toggle-row label{font-size:12px;color:var(--text2)}
+.toggle{width:34px;height:18px;background:var(--bg4);border-radius:9px;cursor:pointer;position:relative;transition:background 0.2s;flex-shrink:0}
+.toggle.on{background:var(--accent)}
+.toggle::after{content:'';position:absolute;width:12px;height:12px;border-radius:50%;background:#fff;top:3px;left:3px;transition:left 0.2s}
+.toggle.on::after{left:19px}
+.divider{border:none;border-top:1px solid var(--border)}
+
+/* ── MAIN ── */
+.main{padding:20px 20px;overflow-y:auto;min-width:0;display:flex;flex-direction:column;gap:18px}
+.main-hdr{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.main-title{font-family:var(--fh);font-size:20px;font-weight:700}
+
+/* ── TABS ── */
+.tabs-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs-wrap::-webkit-scrollbar{display:none}
+.view-tabs{display:flex;gap:3px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:3px;width:max-content}
+.view-tab{padding:6px 13px;border-radius:7px;font-size:12px;cursor:pointer;color:var(--text2);transition:all 0.15s;border:none;background:none;font-family:var(--fb);white-space:nowrap}
+.view-tab.active{background:var(--bg4);color:var(--text);font-weight:500}
+.view-tab:hover:not(.active){color:var(--text)}
+
+/* ── AD BLOCK (before preview) ── */
+.ad-mid{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;min-height:90px;padding:8px;overflow:hidden}
+
+/* ── META PANEL ── */
+.meta-panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.meta-stat{text-align:center}
+.meta-val{font-family:var(--fh);font-size:17px;font-weight:700;line-height:1;word-break:break-all}
+.meta-val.good{color:var(--accent3)}
+.meta-val.warn{color:var(--accent2)}
+.meta-val.ok{color:var(--accent)}
+.meta-val.dim{color:var(--text2)}
+.meta-lbl{font-size:10px;color:var(--text3);font-family:var(--fm);margin-top:3px;text-transform:uppercase;letter-spacing:0.05em}
+
+/* ── DEVICE CARDS ── */
+.previews-grid{display:grid;gap:16px}
+.previews-grid.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+.device-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.dcard-hdr{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;border-bottom:1px solid var(--border)}
+.dcard-name{font-family:var(--fh);font-size:13px;font-weight:600;display:flex;align-items:center;gap:7px}
+.dcard-ico{width:18px;height:18px;stroke:var(--text2);fill:none;stroke-width:1.5}
+.dcard-dim{font-family:var(--fm);font-size:10px;color:var(--text3)}
+.dcard-body{padding:14px}
+
+/* ── EMPTY STATE ── */
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:320px;text-align:center;gap:12px}
+.empty-ico{width:58px;height:58px;border-radius:14px;background:var(--bg3);display:flex;align-items:center;justify-content:center}
+.empty-ico svg{width:25px;height:25px;stroke:var(--text3);fill:none;stroke-width:1.5;stroke-linecap:round}
+.empty-title{font-family:var(--fh);font-size:17px;font-weight:600;color:var(--text2)}
+.empty-sub{font-size:13px;color:var(--text3);max-width:260px;line-height:1.6}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--bg2)}
+.footer-left{font-size:12px;color:var(--text3)}
+.footer-left span{color:var(--accent);font-weight:600}
+.footer-right{font-size:11px;color:var(--text3);font-family:var(--fm)}
+
+/* ── YOUTUBE MOCKUPS ── */
+.ytd{background:#0f0f0f;border-radius:6px;overflow:hidden}
+.ytd-bar{background:#0f0f0f;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #272727}
+.ytd-logo{font-size:12px;font-weight:700;color:#ff0000;font-family:sans-serif}
+.ytd-search{background:#121212;border:1px solid #303030;border-radius:2px;padding:4px 10px;font-size:11px;color:#666;width:140px}
+.ytd-body{display:grid;grid-template-columns:1fr 190px}
+.ytd-main{padding:10px 12px}
+.ytd-mthumb{border-radius:5px;overflow:hidden;aspect-ratio:16/9;background:#1a1a1a;position:relative}
+.ytd-mthumb img{width:100%;height:100%;object-fit:cover;display:block}
+.dur{position:absolute;bottom:4px;right:4px;background:rgba(0,0,0,0.85);color:#fff;padding:1px 4px;border-radius:2px;font-family:monospace;font-size:9px}
+.ytd-mmeta{margin-top:7px}
+.ytd-mt{font-size:12px;font-weight:600;color:#f1f1f1;line-height:1.35;margin-bottom:4px;font-family:sans-serif}
+.ytd-ms{font-size:10px;color:#aaa;display:flex;gap:7px;font-family:sans-serif}
+.ytd-side{border-left:1px solid #272727;padding:8px}
+.ytd-si{display:flex;gap:6px;margin-bottom:8px;cursor:pointer}
+.ytd-st{border-radius:3px;overflow:hidden;width:95px;flex-shrink:0;aspect-ratio:16/9;background:#1a1a1a;position:relative}
+.ytd-st img{width:100%;height:100%;object-fit:cover;display:block}
+.ytd-st.hl{outline:2px solid #3ea6ff;outline-offset:-2px}
+.ytd-sm{flex:1;min-width:0}
+.ytd-sm .t{font-size:10px;color:#f1f1f1;line-height:1.3;font-weight:500;margin-bottom:3px;font-family:sans-serif}
+.ytd-sm .s{font-size:9px;color:#aaa;font-family:sans-serif}
+/* MOBILE */
+.mob-wrap{display:flex;justify-content:center}
+.mob-frame{background:#0f0f0f;border-radius:18px;overflow:hidden;width:195px;border:7px solid #1c1c1c;outline:1px solid #333}
+.mob-bar{background:#0f0f0f;padding:10px 8px 5px;display:flex;align-items:center;justify-content:space-between}
+.mob-logo{font-size:10px;font-weight:700;color:#ff0000;font-family:sans-serif}
+.mob-dots{display:flex;gap:5px}
+.mob-dots span{width:3px;height:3px;border-radius:50%;background:#555;display:block}
+.mob-vid{margin-bottom:1px}
+.mob-vthumb{aspect-ratio:16/9;background:#1a1a1a;position:relative}
+.mob-vthumb img{width:100%;height:100%;object-fit:cover;display:block}
+.mob-vthumb.hl{outline:2px solid #3ea6ff;outline-offset:-2px}
+.mob-vmeta{padding:5px 8px 7px;display:flex;gap:7px}
+.mob-av{width:20px;height:20px;border-radius:50%;background:#333;flex-shrink:0;margin-top:1px}
+.mob-vi .t{font-size:9px;color:#f1f1f1;font-weight:500;line-height:1.3;margin-bottom:1px;font-family:sans-serif}
+.mob-vi .s{font-size:8px;color:#aaa;font-family:sans-serif}
+/* TV */
+.tv-outer{background:#111;border-radius:10px;padding:7px;border:5px solid #1a1a1a;outline:1px solid #2a2a2a}
+.tv-screen{background:#0f0f0f;border-radius:4px;overflow:hidden;padding:14px 16px}
+.tv-hero{aspect-ratio:16/9;background:#1a1a1a;border-radius:5px;overflow:hidden;margin-bottom:12px;position:relative}
+.tv-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.tv-rlbl{font-size:9px;color:#aaa;margin-bottom:6px;font-family:sans-serif}
+.tv-row{display:flex;gap:7px}
+.tv-item{flex:1;min-width:0}
+.tv-ithumb{aspect-ratio:16/9;background:#1a1a1a;border-radius:3px;overflow:hidden;position:relative}
+.tv-ithumb img{width:100%;height:100%;object-fit:cover;display:block}
+.tv-ithumb.hl{outline:2px solid #3ea6ff;outline-offset:-2px}
+.tv-ititle{font-size:8px;color:#ccc;margin-top:3px;line-height:1.3;font-family:sans-serif}
+/* SEARCH */
+.yts-wrap{background:#0f0f0f;border-radius:6px;padding:12px}
+.yts-bar{display:flex;align-items:center;gap:7px;background:#121212;border:1px solid #303030;border-radius:3px;padding:6px 12px;margin-bottom:12px}
+.yts-bar span{font-size:11px;color:#666;font-family:sans-serif}
+.yts-results{display:flex;flex-direction:column;gap:10px}
+.yts-result{display:flex;gap:10px}
+.yts-rthumb{width:148px;flex-shrink:0;aspect-ratio:16/9;background:#1a1a1a;border-radius:5px;overflow:hidden;position:relative}
+.yts-rthumb img{width:100%;height:100%;object-fit:cover;display:block}
+.yts-rthumb.hl{outline:2px solid #3ea6ff;outline-offset:-2px}
+.yts-rmeta .t{font-size:11px;color:#f1f1f1;line-height:1.35;margin-bottom:3px;font-weight:500;font-family:sans-serif}
+.yts-rmeta .s{font-size:10px;color:#aaa;line-height:1.35;font-family:sans-serif}
+/* HOMEPAGE */
+.yth-wrap{background:#0f0f0f;border-radius:6px;padding:12px}
+.yth-chips{display:flex;gap:5px;margin-bottom:12px;overflow:hidden}
+.yth-chip{background:#272727;border-radius:3px;padding:3px 9px;font-size:10px;color:#f1f1f1;white-space:nowrap;font-family:sans-serif}
+.yth-chip.a{background:#f1f1f1;color:#0f0f0f}
+.yth-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.yth-item{cursor:pointer}
+.yth-ithumb{aspect-ratio:16/9;background:#1a1a1a;border-radius:5px;overflow:hidden;position:relative}
+.yth-ithumb img{width:100%;height:100%;object-fit:cover;display:block}
+.yth-ithumb.hl{outline:2px solid #3ea6ff;outline-offset:-2px}
+.yth-imeta .t{font-size:10px;color:#f1f1f1;font-weight:500;line-height:1.3;margin-bottom:1px;font-family:sans-serif;margin-top:4px}
+.yth-imeta .s{font-size:9px;color:#aaa;font-family:sans-serif}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:3px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:820px){
+  :root{--sidebar-w:100%;--header-h:50px}
+  .app{grid-template-columns:1fr}
+  .sidebar{height:auto;position:static;display:none;border-right:none;border-bottom:1px solid var(--border)}
+  .sidebar.mob-open{display:flex}
+  .mob-nav-btn{display:flex}
+  .previews-grid.two-col{grid-template-columns:1fr}
+  .meta-panel{grid-template-columns:repeat(2,1fr)}
+  .ytd-body{grid-template-columns:1fr}
+  .ytd-side{display:none}
+  .yth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .main{padding:14px}
+}
+@media(max-width:480px){
+  .logo{font-size:16px}
+  .badge{display:none}
+  .meta-val{font-size:14px}
+  .main-hdr{flex-direction:column;align-items:flex-start}
+  footer{flex-direction:column;align-items:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Thumbnail<span>Lab</span></div>
+  <div class="hdr-right">
+    <div class="badge">Free Tool</div>
+    <button class="mob-nav-btn" id="mobNavBtn" aria-label="Toggle settings">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      Upload
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════
+     TOP AD BANNER — Paste Adsterra code here
+═══════════════════════════════════════ -->
+<div class="ad-top" id="adTop">
+  <!-- ADSTERRA TOP AD — paste your code below this line -->
+
+  <!-- end Adsterra top ad -->
+</div>
+
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div>
+      <div class="slabel">Upload Thumbnail</div>
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" accept="image/*">
+        <div class="uico">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <p><strong>Click to upload</strong> or drag &amp; drop</p>
+        <div class="hint">JPG, PNG, WEBP &bull; Max 10MB &bull; 1280&times;720 ideal</div>
+      </div>
+    </div>
+
+    <div id="thumbPrevWrap" style="display:none">
+      <div class="slabel">Your Thumbnail</div>
+      <div class="tp"><img id="thumbPrevImg" src="" alt="Uploaded thumbnail"></div>
+    </div>
+
+    <div>
+      <div class="slabel">Display Options</div>
+      <div class="toggle-row">
+        <label>Highlight your thumbnail</label>
+        <div class="toggle on" id="hlToggle"></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div>
+      <div class="slabel">Performance Score</div>
+      <div class="score-card">
+        <div class="score-hdr">
+          <div>
+            <div class="score-num" id="scoreNum">--</div>
+            <div class="score-lbl">CTR Score</div>
+          </div>
+          <svg class="score-ring" viewBox="0 0 52 52" fill="none">
+            <circle cx="26" cy="26" r="22" stroke="var(--bg4)" stroke-width="4"/>
+            <circle id="scoreArc" cx="26" cy="26" r="22" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-dasharray="138.2" stroke-dashoffset="138.2" style="transition:stroke-dashoffset 0.8s ease"/>
+          </svg>
+        </div>
+        <div class="sbars">
+          <div class="sbar-row"><span class="sbar-label">Contrast</span><div class="sbar-track"><div class="sbar-fill" id="sb-contrast" style="width:0;background:var(--accent3)"></div></div><span class="sbar-pct" id="sp-contrast">--</span></div>
+          <div class="sbar-row"><span class="sbar-label">Brightness</span><div class="sbar-track"><div class="sbar-fill" id="sb-bright" style="width:0;background:var(--accent)"></div></div><span class="sbar-pct" id="sp-bright">--</span></div>
+          <div class="sbar-row"><span class="sbar-label">Saturation</span><div class="sbar-track"><div class="sbar-fill" id="sb-sat" style="width:0;background:var(--accent2)"></div></div><span class="sbar-pct" id="sp-sat">--</span></div>
+          <div class="sbar-row"><span class="sbar-label">Clarity</span><div class="sbar-track"><div class="sbar-fill" id="sb-clarity" style="width:0;background:#a78bfa"></div></div><span class="sbar-pct" id="sp-clarity">--</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="sugsSection" style="display:none">
+      <div class="slabel">Suggestions</div>
+      <div class="sugs" id="sugsList"></div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main" id="mainContent">
+
+    <div class="main-hdr">
+      <div class="main-title">Device Preview</div>
+      <div class="tabs-wrap">
+        <div class="view-tabs" id="tabsRow">
+          <button class="view-tab active" data-view="all">All</button>
+          <button class="view-tab" data-view="desktop">Desktop</button>
+          <button class="view-tab" data-view="mobile">Mobile</button>
+          <button class="view-tab" data-view="tv">TV</button>
+          <button class="view-tab" data-view="search">Search</button>
+          <button class="view-tab" data-view="home">Homepage</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- META STATS -->
+    <div class="meta-panel">
+      <div class="meta-stat"><div class="meta-val dim" id="mres">--</div><div class="meta-lbl">Resolution</div></div>
+      <div class="meta-stat"><div class="meta-val dim" id="mratio">--</div><div class="meta-lbl">Aspect Ratio</div></div>
+      <div class="meta-stat"><div class="meta-val dim" id="msize">--</div><div class="meta-lbl">File Size</div></div>
+      <div class="meta-stat"><div class="meta-val dim" id="mfmt">--</div><div class="meta-lbl">Format</div></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         MID AD BLOCK — Paste Adsterra code here
+         (Shows above device previews)
+    ═══════════════════════════════════════ -->
+    <div class="ad-mid" id="adMid">
+      <!-- ADSTERRA MID AD — paste your code below this line -->
+
+      <!-- end Adsterra mid ad -->
+    </div>
+
+    <!-- PREVIEW VIEWS -->
+    <div id="view-all">
+      <div class="previews-grid two-col">
+        <div class="device-card">
+          <div class="dcard-hdr">
+            <div class="dcard-name"><svg class="dcard-ico" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>YouTube Desktop</div>
+            <div class="dcard-dim">1280 x 720</div>
+          </div>
+          <div class="dcard-body" id="p-desktop"></div>
+        </div>
+        <div class="device-card">
+          <div class="dcard-hdr">
+            <div class="dcard-name"><svg class="dcard-ico" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1"/></svg>YouTube Mobile</div>
+            <div class="dcard-dim">390 x 844</div>
+          </div>
+          <div class="dcard-body" id="p-mobile"></div>
+        </div>
+        <div class="device-card">
+          <div class="dcard-hdr">
+            <div class="dcard-name"><svg class="dcard-ico" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>Smart TV</div>
+            <div class="dcard-dim">4K Display</div>
+          </div>
+          <div class="dcard-body" id="p-tv"></div>
+        </div>
+        <div class="device-card">
+          <div class="dcard-hdr">
+            <div class="dcard-name"><svg class="dcard-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Search Results</div>
+            <div class="dcard-dim">All Devices</div>
+          </div>
+          <div class="dcard-body" id="p-search"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-desktop" style="display:none">
+      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">YouTube Desktop</div><div class="dcard-dim">1280 x 720 thumbnail</div></div><div class="dcard-body" id="p-desktop-s"></div></div>
+    </div>
+    <div id="view-mobile" style="display:none">
+      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">YouTube Mobile</div><div class="dcard-dim">390 x 844 screen</div></div><div class="dcard-body" id="p-mobile-s"></div></div>
+    </div>
+    <div id="view-tv" style="display:none">
+      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">Smart TV</div><div class="dcard-dim">4K display</div></div><div class="dcard-body" id="p-tv-s"></div></div>
+    </div>
+    <div id="view-search" style="display:none">
+      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">Search Results</div><div class="dcard-dim">YouTube Search</div></div><div class="dcard-body" id="p-search-s"></div></div>
+    </div>
+    <div id="view-home" style="display:none">
+      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">YouTube Homepage</div><div class="dcard-dim">Desktop feed</div></div><div class="dcard-body" id="p-home-s"></div></div>
+    </div>
+
+    <div id="emptyState" class="empty" style="display:none">
+      <div class="empty-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M10 8l5 3-5 3V8z"/></svg></div>
+      <div class="empty-title">Upload a thumbnail to preview</div>
+      <div class="empty-sub">Upload your image to see how it looks across all YouTube surfaces and get a free performance score.</div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-right">
+      <span>
+          <a href = "privacy.html">Privacy Policy</a> • 
+          <a href="terms.html">Terms of Service</a>
+      </span>
+    </div>
+    
+  <div class="footer-left">Made by <span>Raghav Gupta</span> &mdash; ThumbnailLab &copy; <script>document.write(new Date().getFullYear())</script></div>
+  <div class="footer-right">Free YouTube Thumbnail Preview Tool</div>
+  
+</footer>
+
+<script>
+var S = {
+  img: null,
+  hl: true,
+  fsize: 0,
+  ftype: ''
+};
+
+function imgTag(cls) {
+  if (!S.img) return '<div style="width:100%;height:100%;background:#1c1c1c;display:flex;align-items:center;justify-content:center;font-size:9px;color:#444;font-family:monospace">No image</div>';
+  var hlStyle = (S.hl && cls) ? 'outline:2px solid #3ea6ff;outline-offset:-2px;' : '';
+  return '<img src="' + S.img + '" style="width:100%;height:100%;object-fit:cover;display:block;' + hlStyle + '">';
+}
+
+function buildDesktop(el) {
+  var sides = [
+    {hl:false, t:'10 Side Hustle Ideas That Actually Work', s:'Business Tips &bull; 45K views'},
+    {hl:true,  t:'Your Video Title Here', s:'Your Channel &bull; -- views'},
+    {hl:false, t:'The Truth About Passive Income Online', s:'MoneyMind &bull; 892K views'},
+    {hl:false, t:'I Quit My Job &mdash; Made More Money', s:'FreedomCreator &bull; 2.1M views'},
+    {hl:false, t:'Investing $1000 Best Options Right Now', s:'Finance Lab &bull; 340K views'}
+  ];
+  var sidesHTML = '';
+  for (var i = 0; i < sides.length; i++) {
+    var item = sides[i];
+    var hlClass = (item.hl && S.hl) ? ' hl' : '';
+    var thumb = item.hl ? imgTag('hl') : '<div style="width:100%;height:100%;background:#2a2a2a;"></div>';
+    sidesHTML += '<div class="ytd-si"><div class="ytd-st' + hlClass + '" style="position:relative">' + thumb + '<span class="dur">8:22</span></div><div class="ytd-sm"><div class="t">' + item.t + '</div><div class="s">' + item.s + '</div></div></div>';
+  }
+  el.innerHTML = '<div class="ytd"><div class="ytd-bar"><span class="ytd-logo">&#9654; YouTube</span><span class="ytd-search">Search</span></div><div class="ytd-body"><div class="ytd-main"><div class="ytd-mthumb" style="position:relative">' + imgTag('main') + '<span class="dur">12:34</span></div><div class="ytd-mmeta"><div class="ytd-mt">Your Video Title</div><div class="ytd-ms"><span>Your Channel</span><span>-- views</span><span>just now</span></div></div></div><div class="ytd-side">' + sidesHTML + '</div></div></div>';
+}
+
+function buildMobile(el) {
+  var vids = [
+    {hl:false, t:'Morning Routine for Productivity'},
+    {hl:true,  t:'Your Video Title Here'},
+    {hl:false, t:'Best Gear Under $50 for Creators'}
+  ];
+  var feedHTML = '';
+  for (var i = 0; i < vids.length; i++) {
+    var v = vids[i];
+    var hlClass = (v.hl && S.hl) ? ' hl' : '';
+    var thumb = v.hl ? imgTag('hl') : '<div style="width:100%;height:100%;background:#222;"></div>';
+    feedHTML += '<div class="mob-vid"><div class="mob-vthumb' + hlClass + '" style="position:relative">' + thumb + '<span class="dur">12:34</span></div><div class="mob-vmeta"><div class="mob-av"></div><div class="mob-vi"><div class="t">' + v.t + '</div><div class="s">' + (v.hl ? 'Your Channel' : 'Creator') + ' &bull; -- views</div></div></div></div>';
+  }
+  el.innerHTML = '<div class="mob-wrap"><div class="mob-frame"><div class="mob-bar"><span class="mob-logo">&#9654; YouTube</span><div class="mob-dots"><span></span><span></span><span></span></div></div><div class="mob-feed">' + feedHTML + '</div></div></div>';
+}
+
+function buildTV(el) {
+  var items = [
+    {hl:true,  t:'Your Video Title Here'},
+    {hl:false, t:'Best Cameras for YouTube 2025'},
+    {hl:false, t:'Studio Setup on a Budget'},
+    {hl:false, t:'How to Grow to 100K Subs'}
+  ];
+  var rowHTML = '';
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i];
+    var hlClass = (item.hl && S.hl) ? ' hl' : '';
+    var thumb = item.hl ? imgTag('hl') : '<div style="width:100%;height:100%;background:#222;"></div>';
+    rowHTML += '<div class="tv-item"><div class="tv-ithumb' + hlClass + '" style="position:relative">' + thumb + '</div><div class="tv-ititle">' + item.t + '</div></div>';
+  }
+  el.innerHTML = '<div class="tv-outer"><div class="tv-screen"><div class="tv-hero" style="position:relative">' + imgTag('hero') + '<span class="dur">12:34</span></div><div class="tv-rlbl">Recommended</div><div class="tv-row">' + rowHTML + '</div></div></div>';
+}
+
+function buildSearch(el) {
+  var results = [
+    {hl:false, t:'5 Realistic Ways to Make Money Online in 2025', s:'MoneyTalks &bull; 3.4M views &bull; 2 months ago'},
+    {hl:true,  t:'Your Video Title Here', s:'Your Channel &bull; -- views &bull; just now'},
+    {hl:false, t:'I Tried 10 Make Money Methods &mdash; The Truth', s:'HonestReviews &bull; 1.1M views &bull; 5 months ago'},
+    {hl:false, t:'Make Money Online: Beginner Guide 2025', s:'EarnOnline &bull; 780K views &bull; 1 year ago'}
+  ];
+  var html = '';
+  for (var i = 0; i < results.length; i++) {
+    var r = results[i];
+    var hlClass = (r.hl && S.hl) ? ' hl' : '';
+    var thumb = r.hl ? imgTag('hl') : '<div style="width:100%;height:100%;background:#1a1a1a;"></div>';
+    html += '<div class="yts-result"><div class="yts-rthumb' + hlClass + '" style="position:relative">' + thumb + '<span class="dur">12:34</span></div><div class="yts-rmeta"><div class="t">' + r.t + '</div><div class="s">' + r.s + '</div></div></div>';
+  }
+  el.innerHTML = '<div class="yts-wrap"><div class="yts-bar"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><span>search results</span></div><div class="yts-results">' + html + '</div></div>';
+}
+
+function buildHome(el) {
+  var items = [
+    {hl:true,  t:'Your Video Title', s:'Your Channel'},
+    {hl:false, t:'5 Budget Travel Hacks', s:'WanderMore &bull; 2.3M'},
+    {hl:false, t:'Best Keyboards 2025', s:'TechDesk &bull; 890K'},
+    {hl:false, t:'Learn Python in 60 Min', s:'CodeFast &bull; 4.1M'},
+    {hl:false, t:'Home Gym Under $300', s:'FitLife &bull; 1.5M'},
+    {hl:false, t:'Top VS Code Extensions', s:'DevTips &bull; 3.2M'},
+    {hl:false, t:'Perfect Morning Routine', s:'Mindful &bull; 700K'},
+    {hl:false, t:'Cinematic iPhone Tips', s:'ViralVideo &bull; 2.8M'}
+  ];
+  var chips = ['All','Music','Gaming','Programming','Finance','Travel'];
+  var chipsHTML = '';
+  for (var c = 0; c < chips.length; c++) {
+    chipsHTML += '<span class="yth-chip' + (c === 0 ? ' a' : '') + '">' + chips[c] + '</span>';
+  }
+  var gridHTML = '';
+  for (var j = 0; j < items.length; j++) {
+    var item = items[j];
+    var hlClass = (item.hl && S.hl) ? ' hl' : '';
+    var thumb = item.hl ? imgTag('hl') : '<div style="width:100%;height:100%;background:#1a1a1a;"></div>';
+    gridHTML += '<div class="yth-item"><div class="yth-ithumb' + hlClass + '" style="position:relative">' + thumb + '<span class="dur">12:34</span></div><div class="yth-imeta"><div class="t">' + item.t + '</div><div class="s">' + item.s + ' views</div></div></div>';
+  }
+  el.innerHTML = '<div class="yth-wrap"><div class="yth-chips">' + chipsHTML + '</div><div class="yth-grid">' + gridHTML + '</div></div>';
+}
+
+function renderAll() {
+  var hasImg = !!S.img;
+  document.getElementById('emptyState').style.display = hasImg ? 'none' : 'flex';
+  var allViews = ['all','desktop','mobile','tv','search','home'];
+  var currentView = document.querySelector('.view-tab.active').getAttribute('data-view');
+  for (var i = 0; i < allViews.length; i++) {
+    var el = document.getElementById('view-' + allViews[i]);
+    if (el) el.style.display = (allViews[i] === currentView) ? '' : 'none';
+  }
+  if (currentView === 'all') {
+    buildDesktop(document.getElementById('p-desktop'));
+    buildMobile(document.getElementById('p-mobile'));
+    buildTV(document.getElementById('p-tv'));
+    buildSearch(document.getElementById('p-search'));
+  } else if (currentView === 'desktop') {
+    buildDesktop(document.getElementById('p-desktop-s'));
+  } else if (currentView === 'mobile') {
+    buildMobile(document.getElementById('p-mobile-s'));
+  } else if (currentView === 'tv') {
+    buildTV(document.getElementById('p-tv-s'));
+  } else if (currentView === 'search') {
+    buildSearch(document.getElementById('p-search-s'));
+  } else if (currentView === 'home') {
+    buildHome(document.getElementById('p-home-s'));
+  }
+  if (hasImg) analyzeImage();
+}
+
+function analyzeImage() {
+  var img = new Image();
+  img.onload = function() {
+    var canvas = document.createElement('canvas');
+    canvas.width = 100; canvas.height = 56;
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, 100, 56);
+    var data = ctx.getImageData(0, 0, 100, 56).data;
+    var rSum=0, gSum=0, bSum=0, n=data.length/4;
+    var minL=255, maxL=0, satSum=0;
+    for (var i=0; i<data.length; i+=4) {
+      var r=data[i], g=data[i+1], b=data[i+2];
+      rSum+=r; gSum+=g; bSum+=b;
+      var mx=Math.max(r,g,b), mn=Math.min(r,g,b);
+      var lum=(mx+mn)/2;
+      if (lum<minL) minL=lum;
+      if (lum>maxL) maxL=lum;
+      satSum+=(mx===0 ? 0 : (mx-mn)/mx);
+    }
+    var brightness=Math.round((0.299*rSum/n+0.587*gSum/n+0.114*bSum/n)/255*100);
+    var contrast=Math.round((maxL-minL)/255*100);
+    var saturation=Math.round(satSum/n*100);
+    var clarity=Math.min(100,Math.round(contrast*0.6+brightness*0.2+saturation*0.2));
+    var overall=Math.round(contrast*0.35+brightness*0.2+saturation*0.25+clarity*0.2);
+    setScore(overall,contrast,brightness,saturation,clarity);
+    buildSuggestions(brightness,contrast,saturation);
+    updateMeta(img.naturalWidth,img.naturalHeight);
+  };
+  img.src = S.img;
+}
+
+function setScore(s,contrast,bright,sat,clarity) {
+  document.getElementById('scoreNum').textContent = s;
+  var arc = document.getElementById('scoreArc');
+  arc.style.strokeDashoffset = 138.2 - (138.2*s/100);
+  arc.style.stroke = s>75 ? 'var(--accent3)' : (s>50 ? 'var(--accent)' : 'var(--accent2)');
+  function sb(id,val) {
+    document.getElementById('sb-'+id).style.width=val+'%';
+    document.getElementById('sp-'+id).textContent=Math.round(val)+'%';
+  }
+  sb('contrast',contrast); sb('bright',bright); sb('sat',sat); sb('clarity',clarity);
+  document.getElementById('sugsSection').style.display='';
+}
+
+function buildSuggestions(bright,contrast,sat) {
+  var list = [];
+  if (contrast<40) {
+    list.push({t:'Low contrast detected',m:'High-contrast thumbnails stand out in feeds. Try a dark/light background split.',type:'warn'});
+  } else {
+    list.push({t:'Contrast looks good',m:'Strong contrast helps visibility in both light and dark mode feeds.',type:'good'});
+  }
+  if (bright<30) {
+    list.push({t:'Image is quite dark',m:'Dark thumbnails can get lost in the feed. Boost brightness or add a bright foreground.',type:'warn'});
+  } else if (bright>85) {
+    list.push({t:'Image may be overexposed',m:'Very bright thumbnails blend into white UI. Adding dark elements will help.',type:'warn'});
+  } else {
+    list.push({t:'Good brightness level',m:'Brightness is in the optimal range for YouTube feeds.',type:'good'});
+  }
+  if (sat<25) {
+    list.push({t:'Low saturation',m:'Vibrant saturated colors attract more clicks. Boost saturation in your editor.',type:'warn'});
+  } else {
+    list.push({t:'Saturation is vibrant',m:'Colorful thumbnails outperform muted competition in the feed.',type:'good'});
+  }
+  list.push({t:'Faces boost CTR by ~38%',m:'Thumbnails with a human face showing strong emotion outperform faceless ones.',type:'info'});
+  list.push({t:'Use 3-4 colours max',m:'A limited, high-contrast palette avoids visual clutter and is more clickable.',type:'info'});
+  var s = document.getElementById('sugsList');
+  var html = '';
+  for (var i=0; i<list.length; i++) {
+    var item = list[i];
+    var cls = item.type==='good' ? 'good' : (item.type==='warn' ? 'warn' : 'info');
+    var ico = item.type==='good' ? 'g' : (item.type==='warn' ? 'w' : 'i');
+    var col = item.type==='good' ? 'var(--accent3)' : (item.type==='warn' ? 'var(--accent2)' : 'var(--accent)');
+    var path = item.type==='good' ? 'M20 6L9 17l-5-5' : (item.type==='warn' ? 'M12 9v4M12 17h.01' : 'M13 16h-1v-4h-1m1-4h.01');
+    html += '<div class="sug '+cls+'"><div class="sug-ico '+ico+'"><svg viewBox="0 0 24 24" stroke="'+col+'"><path d="'+path+'"/></svg></div><div class="sug-txt"><strong>'+item.t+'</strong>'+item.m+'</div></div>';
+  }
+  s.innerHTML = html;
+}
+
+function updateMeta(w,h) {
+  var res=document.getElementById('mres');
+  res.textContent=w+'x'+h;
+  res.className='meta-val '+(w>=1280&&h>=720?'good':'warn');
+  var ratio=w/h, isGood=Math.abs(ratio-16/9)<0.05;
+  var rat=document.getElementById('mratio');
+  rat.textContent=isGood?'16:9':ratio.toFixed(2);
+  rat.className='meta-val '+(isGood?'good':'warn');
+  var kb=Math.round(S.fsize/1024);
+  var msz=document.getElementById('msize');
+  msz.textContent=kb>1024?Math.round(kb/1024)+'MB':kb+'KB';
+  msz.className='meta-val '+(kb<=2048?'ok':'warn');
+  var parts=S.ftype.split('/');
+  var mfmt=document.getElementById('mfmt');
+  mfmt.textContent=parts.length>1?parts[1].toUpperCase():'--';
+  mfmt.className='meta-val dim';
+}
+
+function handleFile(file) {
+  if (!file||!file.type.startsWith('image/')) return;
+  S.fsize=file.size; S.ftype=file.type;
+  var reader=new FileReader();
+  reader.onload=function(e) {
+    S.img=e.target.result;
+    document.getElementById('thumbPrevWrap').style.display='';
+    document.getElementById('thumbPrevImg').src=e.target.result;
+    renderAll();
+  };
+  reader.readAsDataURL(file);
+}
+
+var fileInput=document.getElementById('fileInput');
+var uploadZone=document.getElementById('uploadZone');
+fileInput.addEventListener('change',function(e){handleFile(e.target.files[0]);});
+uploadZone.addEventListener('dragover',function(e){e.preventDefault();uploadZone.classList.add('drag-over');});
+uploadZone.addEventListener('dragleave',function(){uploadZone.classList.remove('drag-over');});
+uploadZone.addEventListener('drop',function(e){e.preventDefault();uploadZone.classList.remove('drag-over');handleFile(e.dataTransfer.files[0]);});
+
+document.getElementById('hlToggle').addEventListener('click',function(){
+  S.hl=!S.hl;
+  this.classList.toggle('on',S.hl);
+  renderAll();
+});
+
+var tabs=document.querySelectorAll('.view-tab');
+for (var ti=0;ti<tabs.length;ti++) {
+  tabs[ti].addEventListener('click',function(){
+    var all=document.querySelectorAll('.view-tab');
+    for (var k=0;k<all.length;k++) all[k].classList.remove('active');
+    this.classList.add('active');
+    renderAll();
+  });
+}
+
+document.getElementById('mobNavBtn').addEventListener('click',function(){
+  document.getElementById('sidebar').classList.toggle('mob-open');
+});
+
+renderAll();
+</script>
+</body>
+</html>
