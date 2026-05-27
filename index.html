@@ -265,6 +265,21 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
   .main-hdr{flex-direction:column;align-items:flex-start}
   footer{flex-direction:column;align-items:center;text-align:center}
 }
+.cta-btn{
+  background:var(--accent);
+  color:#0d0d0f;
+  font-family:var(--fh);
+  font-weight:700;
+  font-size:12px;
+  padding:7px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:opacity 0.15s;
+}
+.cta-btn:hover{opacity:0.85}
+@media(max-width:480px){.cta-btn{font-size:11px;padding:6px 10px}}
+
 </style>
 </head>
 <body>
@@ -273,6 +288,9 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
   <div class="logo">Thumbnail<span>Lab</span></div>
   <div class="hdr-right">
     <div class="badge">Free Tool</div>
+    <a href="https://my-portfolio-127.netlify.app" target="_blank" rel="noopener" class="cta-btn">
+  🎨 Get a Pro Thumbnail
+    </a>
     <button class="mob-nav-btn" id="mobNavBtn" aria-label="Toggle settings">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       Upload
