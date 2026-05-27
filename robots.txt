@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Aapke sitemap ka rasta (Path)
+Sitemap: https://viewthumbnail.vercel.app/sitemap.xml
