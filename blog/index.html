@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Primary SEO -->
+    <title>YouTube Thumbnail Guide - Tips, Tricks & Best Practices | ThumbnailLab Blog</title>
+    <meta name="description" content="Learn YouTube thumbnail design, CTR optimization, and best practices. Expert guides on sizes, colors, and strategies to boost your video performance.">
+    <meta name="keywords" content="youtube thumbnail guide, thumbnail tips, ctr optimization, youtube thumbnail best practices, thumbnail design tutorial">
+    <meta name="author" content="Raghav Gupta">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0d0d0f">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YouTube Thumbnail Blog - Expert Tips & Guides">
+    <meta property="og:description" content="Master YouTube thumbnails with our complete guides on sizing, design, and CTR optimization.">
+    <meta property="og:url" content="https://viewthumbnail.vercel.app/blog">
+    <meta property="og:image" content="https://viewthumbnail.vercel.app/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Thumbnail Blog - Expert Tips">
+    <meta name="twitter:description" content="Master YouTube thumbnails with guides on sizing, design, and CTR optimization.">
+    <meta name="twitter:image" content="https://viewthumbnail.vercel.app/og-image.jpg">
+    
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "ThumbnailLab Blog",
+      "url": "https://viewthumbnail.vercel.app/blog",
+      "description": "Expert guides on YouTube thumbnail design, sizing, and CTR optimization"
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0d0d0f;
+            color: #e0e0e0;
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+        }
+        
+        header {
+            padding: 2rem 1.5rem;
+            border-bottom: 1px solid #1a1a1d;
+            position: sticky;
+            top: 0;
+            background: #0d0d0f;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Syne', sans-serif;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .logo:hover {
+            color: #d4ff00;
+            transition: color 0.3s ease;
+        }
+        
+        nav a {
+            color: #999;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #d4ff00;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            font-family: 'Syne', sans-serif;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .blog-header p {
+            font-size: 1.1rem;
+            color: #999;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .article-card {
+            background: #1a1a1d;
+            border: 1px solid #2a2a2e;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-card:hover {
+            border-color: #d4ff00;
+            background: #151518;
+            transform: translateY(-4px);
+        }
+        
+        .article-card-img {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #1a1a1d, #2a2a2e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .article-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+        
+        .article-card p {
+            color: #999;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #666;
+            padding-top: 1rem;
+            border-top: 1px solid #2a2a2e;
+        }
+        
+        .read-more {
+            color: #d4ff00;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .article-card:hover .read-more {
+            color: #fff;
+        }
+        
+        footer {
+            border-top: 1px solid #1a1a1d;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: #666;
+            margin-top: 4rem;
+        }
+        
+        .cta-section {
+            background: #1a1a1d;
+            border: 1px solid #2a2a2e;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Syne', sans-serif;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            background: #d4ff00;
+            color: #000;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            nav {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav a {
+                margin-left: 0;
+            }
+            
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">ThumbnailLab</a>
+            <nav>
+                <a href="/">Tool</a>
+                <a href="/blog">Blog</a>
+                <a href="/#features">Features</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="blog-header">
+            <h1>Thumbnail Mastery Guide</h1>
+            <p>Expert tips, strategies, and complete guides to optimize your YouTube thumbnails and boost your CTR</p>
+        </div>
+        
+        <div class="articles-grid">
+            <!-- Article 1 -->
+            <a href="/blog/youtube-thumbnail-size-guide.html" class="article-card">
+                <div class="article-card-img">📏</div>
+                <div class="article-card-content">
+                    <h3>Complete YouTube Thumbnail Size Guide 2025</h3>
+                    <p>Learn the perfect dimensions for YouTube thumbnails across all devices. Essential sizing for Desktop, Mobile, TV, and Search results.</p>
+                    <div class="article-meta">
+                        <span>5 min read</span>
+                        <span class="read-more">Read →</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Article 2 -->
+            <a href="/blog/high-ctr-thumbnail-tips.html" class="article-card">
+                <div class="article-card-img">⭐</div>
+                <div class="article-card-content">
+                    <h3>10 High-CTR Thumbnail Design Tips</h3>
+                    <p>Proven strategies to design thumbnails that grab attention. Learn about contrast, colors, text placement, and proven design patterns.</p>
+                    <div class="article-meta">
+                        <span>7 min read</span>
+                        <span class="read-more">Read →</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Article 3 -->
+            <a href="/blog/thumbnail-mistakes.html" class="article-card">
+                <div class="article-card-img">⚠️</div>
+                <div class="article-card-content">
+                    <h3>7 Thumbnail Mistakes You're Making</h3>
+                    <p>Avoid common thumbnail errors that hurt your CTR. Common mistakes YouTubers make and how to fix them instantly.</p>
+                    <div class="article-meta">
+                        <span>4 min read</span>
+                        <span class="read-more">Read →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Ready to Test Your Thumbnails?</h2>
+            <p>Preview how your thumbnails look on all devices instantly with ThumbnailLab</p>
+            <a href="/" class="cta-button">🚀 Go to ThumbnailLab</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 ThumbnailLab. All rights reserved. <a href="/privacy.html" style="color: #999; text-decoration: none;">Privacy</a> | <a href="/terms.html" style="color: #999; text-decoration: none;">Terms</a></p>
+    </footer>
+</body>
+</html>
+
