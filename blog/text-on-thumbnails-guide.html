@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Primary SEO -->
+    <title>Text on YouTube Thumbnails — Readability & CTR Impact Guide</title>
+    <meta name="description" content="Master text placement, sizing, and styling for YouTube thumbnails. Learn what works, what doesn't, and how to maximize CTR with effective typography.">
+    <meta name="keywords" content="text on thumbnails, thumbnail text size, readable thumbnails, thumbnail font size, text placement thumbnails">
+    <meta name="author" content="Raghav Gupta">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0d0d0f">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Text on YouTube Thumbnails — Readability & CTR Impact Guide">
+    <meta property="og:description" content="Complete guide to using text on thumbnails. Learn sizing, placement, and design rules that maximize readability and clicks.">
+    <meta property="og:url" content="https://viewthumbnail.vercel.app/blog/text-thumbnails-guide.html">
+    <meta property="og:image" content="https://viewthumbnail.vercel.app/og-image.jpg">
+    
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Text on YouTube Thumbnails — Readability & CTR Impact Guide",
+      "description": "Comprehensive guide to text placement, sizing, and styling for maximum thumbnail impact",
+      "author": {"@type": "Person", "name": "Raghav Gupta"},
+      "datePublished": "2026-06-30",
+      "dateModified": "2026-06-30",
+      "url": "https://viewthumbnail.vercel.app/blog/text-thumbnails-guide.html"
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0d0d0f;
+            color: #e0e0e0;
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.8;
+        }
+        
+        header {
+            padding: 2rem 1.5rem;
+            border-bottom: 1px solid #1a1a1d;
+            position: sticky;
+            top: 0;
+            background: #0d0d0f;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Syne', sans-serif;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .logo:hover {
+            color: #d4ff00;
+        }
+        
+        nav a {
+            color: #999;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #d4ff00;
+        }
+        
+        article {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #2a2a2e;
+            padding-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            font-family: 'Syne', sans-serif;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        h2 {
+            font-size: 1.6rem;
+            font-family: 'Syne', sans-serif;
+            color: #fff;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            font-family: 'Syne', sans-serif;
+            color: #d4ff00;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+        
+        h4 {
+            font-size: 1.1rem;
+            font-family: 'Syne', sans-serif;
+            color: #d4ff00;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: #ccc;
+        }
+        
+        .highlight {
+            background: #1a1a1d;
+            border-left: 3px solid #d4ff00;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight strong {
+            color: #d4ff00;
+        }
+        
+        ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: #ccc;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .rule-box {
+            background: #1a1a1d;
+            border: 1px solid #2a2a2e;
+            border-left: 3px solid #d4ff00;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .rule-box h4 {
+            margin-top: 0;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .comparison-item {
+            background: #1a1a1d;
+            border: 1px solid #2a2a2e;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+        
+        .comparison-item.good {
+            border-left: 3px solid #00ff00;
+        }
+        
+        .comparison-item.bad {
+            border-left: 3px solid #ff6b6b;
+        }
+        
+        .comparison-label {
+            color: #d4ff00;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .comparison-text {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #1a1a1d, #151518);
+            border: 1px solid #d4ff00;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-box h3 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            background: #d4ff00;
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #d4ff00;
+            color: #d4ff00;
+        }
+        
+        .cta-button.secondary:hover {
+            background: #d4ff00;
+            color: #000;
+        }
+        
+        .author-bio {
+            background: #1a1a1d;
+            border: 1px solid #2a2a2e;
+            border-left: 3px solid #d4ff00;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .author-bio h3 {
+            color: #fff;
+            margin-top: 0;
+        }
+        
+        .author-bio p {
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        
+        .author-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .author-links a {
+            background: #d4ff00;
+            color: #000;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .author-links a:hover {
+            background: #fff;
+        }
+        
+        .back-link {
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #d4ff00;
+        }
+        
+        footer {
+            border-top: 1px solid #1a1a1d;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: #666;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: #999;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: #d4ff00;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            
+            nav a {
+                margin-left: 0;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .author-links {
+                flex-direction: column;
+            }
+            
+            .author-links a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">ThumbnailLab</a>
+            <nav>
+                <a href="/">Tool</a>
+                <a href="/blog">More Blogs</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Responsive Ad 1 -->
+<div class="thumbnail-lab-ad-container" style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 25px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    box-sizing: border-box;
+">
+    <div class="ad-content-wrapper" style="
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        justify-content: center;
+        scrollbar-width: none; /* Firefox ke liye scrollbar hide */
+        -ms-overflow-style: none; /* IE/Edge ke liye */
+    ">
+
+        <script>
+  atOptions = {
+    'key' : '1bc1d4b55aa0c41ee81a41342c0db434',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/1bc1d4b55aa0c41ee81a41342c0db434/invoke.js"></script>
+
+    </div>
+</div>
+    
+    <article>
+        <a href="/blog" class="back-link">← Back to Blogs</a>
+        
+        <div class="article-header">
+            <h1>Text on YouTube Thumbnails — Readability & CTR Impact Guide</h1>
+            <div class="meta">Published on June 30, 2026 • 9 min read</div>
+        </div>
+        
+        <p>Text is the easiest part of thumbnail design to mess up. Too small, viewers can't read it. Too much, it becomes noise. Wrong font, it looks cheap. Bad contrast, it disappears.</p>
+        
+        <p>Yet text is critical. It tells viewers what they'll get if they click. In this guide, you'll learn exactly how to use text to maximize thumbnail readability and CTR.</p>
+        
+        <h2>Why Text Matters on Thumbnails</h2>
+        
+        <p>Text serves two purposes:</p>
+        
+        <p><strong>1. Clarification</strong> — Tells viewers what to expect</p>
+        <p><strong>2. Attention</strong> — Bold text attracts eyes in a busy feed</p>
+        
+        <div class="highlight">
+            <strong>📊 Research:</strong> Thumbnails with readable text get 25-40% higher CTR than text-less thumbnails. But only if the text is actually readable.
+        </div>
+        
+        <!-- Responsive Ad 2 -->
+<div class="thumbnail-lab-ad-container" style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 25px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    box-sizing: border-box;
+">
+    <div class="ad-content-wrapper" style="
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        justify-content: center;
+        scrollbar-width: none; /* Firefox ke liye scrollbar hide */
+        -ms-overflow-style: none; /* IE/Edge ke liye */
+    ">
+
+        <script>
+  atOptions = {
+    'key' : 'd681b91f7da8b8539c88f8536cb35723',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/d681b91f7da8b8539c88f8536cb35723/invoke.js"></script>
+
+    </div>
+</div>
+        
+        <h2>The Text Sizing Rule</h2>
+        
+        <p>Here's the golden rule: <strong>If you can't read it easily on your phone, it's too small.</strong></p>
+        
+        <div class="rule-box">
+            <h4>📏 Minimum Font Sizes (1280x720 thumbnail)</h4>
+            <ul>
+                <li><strong>Desktop view:</strong> 80px minimum</li>
+                <li><strong>Mobile view:</strong> 100px minimum</li>
+                <li><strong>Search results:</strong> 120px minimum (heavily cropped)</li>
+                <li><strong>YouTube Shorts:</strong> 150px minimum (vertical format)</li>
+            </ul>
+        </div>
+        
+        <p><strong>Rule of thumb:</strong> Make text 2-3x larger than feels necessary. If it feels huge, it's probably just right.</p>
+        
+        <h2>Text Placement Strategy</h2>
+        
+        <div class="comparison">
+            <div class="comparison-item good">
+                <div class="comparison-label">✅ GOOD PLACEMENTS</div>
+                <div class="comparison-text">
+                    <strong>Top third</strong><br>
+                    Quick hook, eyes go there first
+                </div>
+            </div>
+            <div class="comparison-item good">
+                <div class="comparison-label">✅ GOOD PLACEMENTS</div>
+                <div class="comparison-text">
+                    <strong>Center</strong><br>
+                    Balanced, dominant focal point
+                </div>
+            </div>
+            <div class="comparison-item good">
+                <div class="comparison-label">✅ GOOD PLACEMENTS</div>
+                <div class="comparison-text">
+                    <strong>Bottom third</strong><br>
+                    Secondary message, call-to-action
+                </div>
+            </div>
+            <div class="comparison-item bad">
+                <div class="comparison-label">❌ AVOID</div>
+                <div class="comparison-text">
+                    <strong>Edges</strong><br>
+                    Gets cropped on mobile/search
+                </div>
+            </div>
+            <div class="comparison-item bad">
+                <div class="comparison-label">❌ AVOID</div>
+                <div class="comparison-text">
+                    <strong>Over faces</strong><br>
+                    Blocks facial expression visibility
+                </div>
+            </div>
+            <div class="comparison-item bad">
+                <div class="comparison-label">❌ AVOID</div>
+                <div class="comparison-text">
+                    <strong>Scattered</strong><br>
+                    Eyes don't know where to focus
+                </div>
+            </div>
+        </div>
+        
+        <h2>Font Weight & Style Rules</h2>
+        
+        <div class="rule-box">
+            <h4>🔤 What Actually Works</h4>
+            <ul>
+                <li><strong>Weight:</strong> Bold (700+) or Extra Bold (800+)</li>
+                <li><strong>Not:</strong> Light or Regular weight (too thin, hard to read)</li>
+                <li><strong>Style:</strong> Sans-serif (clean, modern)</li>
+                <li><strong>Not:</strong> Serif or script (looks outdated)</li>
+                <li><strong>Caps:</strong> ALL CAPS works, Title Case also fine</li>
+                <li><strong>Not:</strong> all lowercase (weak, hard to read)</li>
+            </ul>
+        </div>
+        
+        <p><strong>Best fonts:</strong> Arial, Helvetica, Impact, Montserrat, Syne, DM Sans</p>
+        
+        <h2>Color Contrast for Text</h2>
+        
+        <p>Text color must contrast with background. A lot.</p>
+        
+        <div class="rule-box">
+            <h4>🎨 High-Contrast Combinations (Best)</h4>
+            <ul>
+                <li><strong>Yellow text on black:</strong> 95% visibility ⭐⭐⭐</li>
+                <li><strong>White text on dark blue:</strong> 90% visibility ⭐⭐⭐</li>
+                <li><strong>Black text on yellow:</strong> 95% visibility ⭐⭐⭐</li>
+                <li><strong>White text on red:</strong> 85% visibility ⭐⭐</li>
+                <li><strong>White text on dark color:</strong> 80%+ visibility ⭐⭐</li>
+            </ul>
+        </div>
+        
+        <div class="rule-box">
+            <h4>❌ Low-Contrast Combinations (Avoid)</h4>
+            <ul>
+                <li>Yellow text on light background</li>
+                <li>Light gray text on white</li>
+                <li>Dark blue on dark purple</li>
+                <li>Red on dark red</li>
+                <li>Any similar-tone combinations</li>
+            </ul>
+        </div>
+        
+        <p><strong>Pro Tip:</strong> Add a subtle outline (stroke) around text. Black outline on white text = 15% more readability.</p>
+        
+        <h2>How Many Words? The Word Count Rule</h2>
+        
+        <div class="highlight">
+            <strong>💡 Golden Rule:</strong> Use 1-3 words maximum. Seriously.
+        </div>
+        
+        <p><strong>Why?</strong></p>
+        <ul>
+            <li>1 word: Maximum impact, crystal clear (BEST)</li>
+            <li>2 words: Good, still punchy</li>
+            <li>3 words: Maximum before getting crowded</li>
+            <li>4+ words: Too much text, viewers skip</li>
+        </ul>
+        
+        <p><strong>Examples by word count:</strong></p>
+        <ul>
+            <li><strong>1 word:</strong> "VIRAL" — Immediate, powerful</li>
+            <li><strong>2 words:</strong> "VIRAL HACK" — Specific and punchy</li>
+            <li><strong>3 words:</strong> "TOP VIRAL HACK" — Detailed but still quick</li>
+        </ul>
+        
+        <h2>Text & Visual Hierarchy</h2>
+        
+        <p>Text isn't the only element. You need balance.</p>
+        
+        <div class="rule-box">
+            <h4>👁️ Suggested Breakdown</h4>
+            <ul>
+                <li><strong>40%</strong> — Face or main image</li>
+                <li><strong>30%</strong> — Text/bold elements</li>
+                <li><strong>20%</strong> — Supporting graphics</li>
+                <li><strong>10%</strong> — Negative space (breathing room)</li>
+            </ul>
+        </div>
+        
+        <p>If text takes up more than 40% of the thumbnail, it looks crowded. If less than 10%, it feels like an afterthought.</p>
+        
+        <h2>Text for Different YouTube Formats</h2>
+        
+        <h3>📺 Regular YouTube Videos (16:9)</h3>
+        <p><strong>Best placement:</strong> Top or center</p>
+        <p><strong>Font size:</strong> 100px minimum</p>
+        <p><strong>Words:</strong> 2-3 max</p>
+        
+        <h3>📱 YouTube Shorts (9:16)</h3>
+        <p><strong>Best placement:</strong> Top (uses full vertical space)</p>
+        <p><strong>Font size:</strong> 150px minimum (vertical is larger)</p>
+        <p><strong>Words:</strong> 1-2 max (less horizontal space)</p>
+        
+        <h3>📲 Mobile-Optimized (Extra small)</h3>
+        <p><strong>Best placement:</strong> Center (safest for cropping)</p>
+        <p><strong>Font size:</strong> 120px minimum</p>
+        <p><strong>Words:</strong> 1 word ideally</p>
+        
+        <h2>Common Text Mistakes (And How to Fix)</h2>
+        
+        <div class="rule-box">
+            <h4>❌ Mistake #1: Text Too Small</h4>
+            <p><strong>Problem:</strong> Unreadable on mobile</p>
+            <p><strong>Fix:</strong> Double your current size. Seriously.</p>
+        </div>
+        
+        <div class="rule-box">
+            <h4>❌ Mistake #2: Too Many Words</h4>
+            <p><strong>Problem:</strong> Becomes visual noise, viewers can't process</p>
+            <p><strong>Fix:</strong> Delete half your words. Keep only the hook.</p>
+        </div>
+        
+        <div class="rule-box">
+            <h4>❌ Mistake #3: Low Contrast Text</h4>
+            <p><strong>Problem:</strong> Text blends into background</p>
+            <p><strong>Fix:</strong> Add outline/stroke or change color completely</p>
+        </div>
+        
+        <div class="rule-box">
+            <h4>❌ Mistake #4: Text Over Complex Images</h4>
+            <p><strong>Problem:</strong> Can't read text against busy background</p>
+            <p><strong>Fix:</strong> Add solid color box behind text</p>
+        </div>
+        
+        <div class="rule-box">
+            <h4>❌ Mistake #5: Fancy Fonts</h4>
+            <p><strong>Problem:</strong> Looks trendy but hard to read</p>
+            <p><strong>Fix:</strong> Use clean sans-serif (Arial, Helvetica, Syne)</p>
+        </div>
+        
+        <h2>Testing Your Text — Use ThumbnailLab</h2>
+        
+        <p>Before uploading, test how your text looks on every device.</p>
+        
+        <ul>
+            <li>Is text readable on mobile? (most important)</li>
+            <li>Does it look good on search results? (smallest view)</li>
+            <li>Is there enough contrast?</li>
+            <li>Does it compete with the face/image or complement it?</li>
+        </ul>
+        
+        <p>Use ThumbnailLab to preview across all devices instantly.</p>
+        
+        <div class="cta-box">
+            <h3>🎨 Test Your Thumbnail Text</h3>
+            <p>Preview how your text looks on Desktop, Mobile, TV, Search, and YouTube Shorts. Ensure readability on every device before uploading.</p>
+            <a href="/" class="cta-button">Test Your Text Now</a>
+            <a href="/" class="cta-button secondary">View Text Examples</a>
+        </div>
+        
+        <!-- Responsive Ad 3-->
+<div class="thumbnail-lab-ad-container" style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 25px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    box-sizing: border-box;
+">
+    <div class="ad-content-wrapper" style="
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        justify-content: center;
+        scrollbar-width: none; /* Firefox ke liye scrollbar hide */
+        -ms-overflow-style: none; /* IE/Edge ke liye */
+    ">
+        <script>
+  atOptions = {
+    'key' : '112e9c5cd624dd5446408d1d88e1d9e6',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/112e9c5cd624dd5446408d1d88e1d9e6/invoke.js"></script>
+
+    </div>
+</div>
+        
+        <h2>Text Best Practices Summary</h2>
+        
+        <ul>
+            <li>✅ Use bold (700+) weight, sans-serif fonts</li>
+            <li>✅ Minimum 100px font size (larger for mobile)</li>
+            <li>✅ 1-3 words maximum</li>
+            <li>✅ High contrast (yellow on black = best)</li>
+            <li>✅ Center or top placement</li>
+            <li>✅ Test on phone before uploading</li>
+            <li>❌ Don't use light/thin fonts</li>
+            <li>❌ Don't write full sentences</li>
+            <li>❌ Don't use low-contrast colors</li>
+            <li>❌ Don't overlap text with faces</li>
+        </ul>
+        
+        <h2>Conclusion: Text Is Your Secret Weapon</h2>
+        
+        <p>Many creators overlook text optimization. But bold, readable, well-placed text can increase your CTR by 20-30%. That's significant growth.</p>
+        
+        <p>Follow these rules, test your thumbnails, and watch your click-through rate climb.</p>
+        
+        <div class="author-bio">
+            <h3>👨‍💼 About the Developer</h3>
+            <p>I'm a web developer and freelancer who created ThumbnailLab as a free resource for YouTube creators. The tool lets creators preview thumbnails across Desktop, Mobile, TV, Search, and Homepage.</p>
+            <p>These guides complement the technical tool with practical strategies and design knowledge. I also offer professional thumbnail design and YouTube optimization services through my freelance work.</p>
+            <div class="author-links">
+                <a href="https://www.fiverr.com/raghav_ai_lab" target="_blank">🎨 Professional Services</a>
+                <a href="https://my-portfolio-127.netlify.app" target="_blank">📂 Dev Portfolio</a>
+            </div>
+        </div>
+    </article>
+    
+    <!-- Sticky Bottom Footer Ad 4 -->
+<div class="thumbnail-lab-sticky-footer" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(11, 15, 25, 0.95); /* Aapki dark theme se match karta hua glassmorphism effect */
+    backdrop-filter: blur(5px);
+    padding: 8px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+">
+    <div class="sticky-ad-wrapper" style="
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        justify-content: center;
+        scrollbar-width: none; /* Firefox scrollbar hide */
+        -ms-overflow-style: none; /* IE/Edge */
+    ">
+        
+        <script>
+  atOptions = {
+    'key' : '4d1d8a7a17e8e0653caf1e64131f80cd',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/4d1d8a7a17e8e0653caf1e64131f80cd/invoke.js"></script>
+
+
+    </div>
+</div>
+
+<!-- Extra Padding for Footer: Taaki main website ka footer is ad ke peeche na chhipe -->
+<div style="height: 70px; width: 100%; display: block; clear: both;"></div>
+
+    
+    <footer style="margin-bottom: 50px">
+        <p>&copy; 2026. All rights reserved. | 
+        <a href="/privacy.html">Privacy</a> | 
+        <a href="/terms.html">Terms</a> |
+        <a href="https://www.fiverr.com/raghav_ai_lab" target="_blank">Fiverr Services</a>
+        </p>
+    </footer>
+</body>
+</html>
