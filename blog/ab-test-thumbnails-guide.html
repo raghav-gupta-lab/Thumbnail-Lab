@@ -50,6 +50,56 @@
       "url": "https://viewthumbnail.vercel.app/blog/ab-test-thumbnails-guide.html"
     }
     </script>
+
+    <!-- FAQ Schema — Add this in <head> section -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I A/B test on existing videos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. YouTube doesn't let you change thumbnails and track separate CTR for each. You must upload twice. Old videos have accumulated history that skews data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many tests should I run per month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2-4 tests per month is ideal. This compounds into 20-48 tests per year, which is enough to dial in your formula."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do viewers notice I uploaded twice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not really. If upload times are different (morning vs night), they show in different feed positions. Most viewers won't notice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if both thumbnails get equal CTR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's valuable too! Now you know that variable doesn't matter. Move to next variable. You're still learning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I tell viewers I'm testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It might bias results. Just upload normally. Mention tests in community posts or videos after the test completes."
+      }
+    }
+  ]
+}
+</script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
