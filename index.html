@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/png" href="favicon.png">
-
+  
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WNK9BBV13M"></script>
 <script>
@@ -21,12 +21,12 @@
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
 
-<link rel="canonical" href="https://viewthumbnail.vercel.app/">
+  <link rel="canonical" href="https://viewthumbnail.vercel.app/">
 
-<!-- Primary Title — 55-60 chars, primary keyword front-loaded -->
-<title>YouTube Thumbnail Preview Tool — Test Free on All Devices</title>
+  <!-- Primary Title -->
+  <title>YouTube Thumbnail Preview Tool — Test Free on All Devices</title>
 
-<!-- Meta Description — 150-160 chars, keyword + benefit + CTA -->
+  <!-- Meta Description — 150-160 chars, keyword + benefit + CTA -->
 <meta name="description" content="Free YouTube thumbnail preview tool. See how your thumbnail looks on Desktop, Mobile, TV, Search and Homepage before uploading. No signup, instant results.">
 
 <!-- Meta Keywords — low SEO weight but harmless, kept concise & relevant -->
@@ -191,402 +191,322 @@
 </script>  
 
 
-  <!-- Fonts — Optimized -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   
 <style>
-* {
-  font-synthesis: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* { box-sizing: border-box; margin: 0; padding: 0; font-synthesis: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+:root {
+  --bg:#0d0d0f; --bg2:#141417; --bg3:#1c1c21; --bg4:#242429;
+  --border:rgba(255,255,255,0.07); --border2:rgba(255,255,255,0.13);
+  --accent:#e8ff47; --accent2:#ff6b47; --accent3:#47c8ff;
+  --text:#f0f0f0; --text2:#9898a8; --text3:#5a5a6a;
+  --radius:12px; --radius-lg:16px;
+  --fh:'Syne',sans-serif; --fb:'DM Sans',sans-serif; --fm:'DM Mono',monospace;
+  --sidebar-w:320px; --header-h:54px;
 }
-:root{
-  --bg:#0d0d0f;--bg2:#141417;--bg3:#1c1c21;--bg4:#242429;
-  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
-  --accent:#e8ff47;--accent2:#ff6b47;--accent3:#47c8ff;
-  --text:#f0f0f0;--text2:#9898a8;--text3:#5a5a6a;
-  --radius:12px;--radius-lg:16px;
-  --fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'DM Mono',monospace;
-  --sidebar-w:300px;--header-h:54px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-stretch:normal;-webkit-font-smoothing:antialiased;/* baaki properties same rakhna */}
-body{font-stretch: normal;
-  text-rendering: optimizeLegibility;background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column}
+html, body { width:100%; max-width:100vw; overflow-x:hidden !important; background:var(--bg); color:var(--text); font-family:var(--fb); font-size:15px; line-height:1.6; min-height:100vh; display:flex; flex-direction:column; }
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
 /* ── TOP AD BANNER ── */
 .ad-top{width:100%;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:90px;padding:8px 16px;overflow:hidden}
 
-/* ── HEADER ── */
-header{display:flex;align-items:center;justify-content:space-between;padding:0 12px;height:var(--header-h);border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(13,13,15,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:200;gap:6px}
-.logo{font-family:var(--fh);font-weight:700;font-size:16px;letter-spacing:-0.3px;flex-shrink:0}
-.hdr-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.badge{display:none}
-.cta-btn{background:var(--accent);color:#0d0d0f;font-family:var(--fb);font-weight:600;font-size:11px;padding:5px 9px;border-radius:7px;text-decoration:none;white-space:nowrap}
-.cta-btn .cta-full{display:none}
-.cta-btn .cta-short{display:inline}
-.mob-nav-btn{display:flex;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:5px 9px;cursor:pointer;color:var(--text2);font-size:12px;align-items:center;gap:5px;flex-shrink:0}
+/* ── HEADER (FIXED OVERFLOW) ── */
+header{display:flex;align-items:center;justify-content:space-between;padding:0 12px;height:var(--header-h);border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(13,13,15,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:200;gap:6px;width:100%;max-width:100vw;}
+.logo{font-family:var(--fh);font-weight:700;font-size:17px;letter-spacing:-0.3px;flex-shrink:0}
+.logo span{color:var(--accent)}
+.hdr-right{display:flex;align-items:center;gap:6px;flex-shrink:0;max-width:100%;}
+.cta-btn{background:var(--accent);color:#0d0d0f;font-family:var(--fh);font-weight:700;font-size:11px;padding:6px 10px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:opacity 0.15s;display:inline-flex;align-items:center;gap:4px;}
+.cta-btn:hover{opacity:0.85}
+.mob-nav-btn{display:none;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:5px 8px;cursor:pointer;color:var(--text2);font-size:11px;align-items:center;gap:4px;flex-shrink:0}
+.info-icon-btn { width:30px; height:30px; border-radius:50%; background:#1a1a1d; border:1px solid #2a2a2e; color:var(--accent); font-family:var(--fh); font-weight:700; font-size:13px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.2s }
+.info-icon-btn:hover { background:var(--accent); color:#000; }
 
 /* ── LAYOUT ── */
-.app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;flex:1}
+.app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;flex:1;width:100%;max-width:100vw;}
 
 /* ── SIDEBAR ── */
-.sidebar{border-right:1px solid var(--border);padding:20px 16px;display:flex;flex-direction:column;gap:18px;overflow-y:auto;height:calc(100vh - var(--header-h));position:sticky;top:var(--header-h);scrollbar-width:thin;scrollbar-color:var(--bg4) transparent}
+.sidebar{border-right:1px solid var(--border);padding:18px 14px;display:flex;flex-direction:column;gap:16px;overflow-y:auto;height:calc(100vh - var(--header-h));position:sticky;top:var(--header-h);scrollbar-width:thin;scrollbar-color:var(--bg4) transparent}
 .sidebar.mob-open{display:flex}
-.slabel{font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+.slabel{font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between}
 
-/* ── UPLOAD ── */
-.upload-zone{border:1.5px dashed var(--border2);border-radius:var(--radius-lg);padding:24px 14px;text-align:center;cursor:pointer;transition:border-color 0.2s,background 0.2s;position:relative;background:var(--bg2)}
+/* ── FORM CONTROLS & SELECTORS ── */
+.select-input, .text-input { width:100%; background:var(--bg3); border:1px solid var(--border2); color:var(--text); padding:8px 10px; border-radius:8px; font-family:var(--fb); font-size:12px; outline:none; transition:border-color 0.2s; }
+.select-input:focus, .text-input:focus { border-color:var(--accent); }
+.text-input-wrap { position:relative; margin-bottom:8px; }
+.char-count { position:absolute; right:8px; bottom:6px; font-size:9px; font-family:var(--fm); color:var(--text3); }
+
+/* ── VARIANT TABS ── */
+.variant-picker { display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; margin-bottom:8px; }
+.v-btn { background:var(--bg3); border:1px solid var(--border); color:var(--text2); padding:6px 0; text-align:center; font-family:var(--fm); font-size:11px; border-radius:6px; cursor:pointer; position:relative; }
+.v-btn.active { background:var(--bg4); color:var(--accent); border-color:var(--accent); font-weight:700; }
+.v-btn.has-img::after { content:''; width:5px; height:5px; background:var(--accent3); border-radius:50%; position:absolute; top:3px; right:3px; }
+
+/* ── UPLOAD ZONE ── */
+.upload-zone{border:1.5px dashed var(--border2);border-radius:var(--radius-lg);padding:16px 12px;text-align:center;cursor:pointer;transition:border-color 0.2s,background 0.2s;position:relative;background:var(--bg2)}
 .upload-zone:hover,.upload-zone.drag-over{border-color:var(--accent);background:rgba(232,255,71,0.03)}
 .upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.uico{width:36px;height:36px;margin:0 auto 10px;background:var(--bg3);border-radius:10px;display:flex;align-items:center;justify-content:center}
-.uico svg{width:17px;height:17px;stroke:var(--text2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.upload-zone p{font-size:13px;color:var(--text2)}
+.uico{width:30px;height:30px;margin:0 auto 6px;background:var(--bg3);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.uico svg{width:15px;height:15px;stroke:var(--text2);fill:none;stroke-width:1.8;}
+.upload-zone p{font-size:12px;color:var(--text2)}
 .upload-zone p strong{color:var(--accent);font-weight:500}
-.upload-zone .hint{font-size:11px;color:var(--text3);margin-top:5px;font-family:var(--fm)}
+.upload-zone .hint{font-size:10px;color:var(--text3);margin-top:4px;font-family:var(--fm)}
 
 /* ── THUMB PREVIEW ── */
-.tp{border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;background:var(--bg3)}
+.tp{border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;background:var(--bg3);position:relative}
 .tp img{width:100%;height:100%;object-fit:cover;display:block}
+.tp-remove{position:absolute;top:6px;right:6px;background:rgba(0,0,0,0.75);color:#fff;border:none;border-radius:50%;width:22px;height:22px;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
 
-/* ── SCORE ── */
-.score-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px}
-.score-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.score-num{font-family:var(--fh);font-size:34px;font-weight:800;line-height:1}
-.score-lbl{font-size:10px;font-family:var(--fm);color:var(--text3);text-transform:uppercase;margin-top:2px}
-.score-ring{width:50px;height:50px}
+/* ── SCORE CARD ── */
+.score-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:12px}
+.score-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.score-num{font-family:var(--fh);font-size:30px;font-weight:800;line-height:1}
+.score-lbl{font-size:9px;font-family:var(--fm);color:var(--text3);text-transform:uppercase;margin-top:2px}
+.score-ring{width:44px;height:44px}
 .score-ring svg{transform:rotate(-90deg)}
-.sbars{display:flex;flex-direction:column;gap:7px}
+.sbars{display:flex;flex-direction:column;gap:6px}
 .sbar-row{display:flex;align-items:center;gap:8px}
-.sbar-row .sbar-label{font-size:11px;color:var(--text2);width:80px;flex-shrink:0}
+.sbar-row .sbar-label{font-size:11px;color:var(--text2);width:75px;flex-shrink:0}
 .sbar-track{flex:1;height:4px;background:var(--bg4);border-radius:2px;overflow:hidden}
 .sbar-fill{height:100%;border-radius:2px;transition:width 0.6s cubic-bezier(0.34,1.56,0.64,1)}
-.sbar-row .sbar-pct{font-family:var(--fm);font-size:10px;color:var(--text3);width:28px;text-align:right}
+.sbar-row .sbar-pct{font-family:var(--fm);font-size:10px;color:var(--text3);width:26px;text-align:right}
 
 /* ── SUGGESTIONS ── */
-.sugs{display:flex;flex-direction:column;gap:7px}
-.sug{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:10px 12px;display:flex;gap:9px;align-items:flex-start}
+.sugs{display:flex;flex-direction:column;gap:6px}
+.sug{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;display:flex;gap:8px;align-items:flex-start}
 .sug.good{border-color:rgba(71,200,255,0.2);background:rgba(71,200,255,0.04)}
 .sug.warn{border-color:rgba(255,107,71,0.2);background:rgba(255,107,71,0.04)}
 .sug.info{border-color:rgba(232,255,71,0.15);background:rgba(232,255,71,0.03)}
-.sug-ico{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.sug-ico{width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .sug-ico.g{background:rgba(71,200,255,0.15)}
 .sug-ico.w{background:rgba(255,107,71,0.15)}
 .sug-ico.i{background:rgba(232,255,71,0.12)}
-.sug-ico svg{width:12px;height:12px;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.sug-txt{font-size:12px;color:var(--text2);line-height:1.5}
-.sug-txt strong{color:var(--text);font-weight:500;display:block;margin-bottom:1px;font-size:12px}
+.sug-ico svg{width:11px;height:11px;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.sug-txt{font-size:11.5px;color:var(--text2);line-height:1.35}
+.sug-txt strong{color:var(--text);font-weight:500;display:block;margin-bottom:1px;font-size:11.5px}
 
-/* ── TOGGLE ── */
-.toggle-row{display:flex;align-items:center;justify-content:space-between}
+/* ── TOGGLE & CHECKBOX ── */
+.toggle-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
 .toggle-row label{font-size:12px;color:var(--text2)}
 .toggle{width:34px;height:18px;background:var(--bg4);border-radius:9px;cursor:pointer;position:relative;transition:background 0.2s;flex-shrink:0}
 .toggle.on{background:var(--accent)}
 .toggle::after{content:'';position:absolute;width:12px;height:12px;border-radius:50%;background:#fff;top:3px;left:3px;transition:left 0.2s}
 .toggle.on::after{left:19px}
+.checkbox-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:4px; }
+.checkbox-item { display:flex; align-items:center; gap:5px; font-size:11px; color:var(--text2); cursor:pointer; }
+.checkbox-item input { accent-color:var(--accent); cursor:pointer; }
+
 .divider{border:none;border-top:1px solid var(--border)}
 
-/* ── MAIN ── */
-.main{padding:20px 20px;overflow-y:auto;min-width:0;display:flex;flex-direction:column;gap:18px}
-.main-hdr{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.main-title{font-family:var(--fh);font-size:20px;font-weight:700}
+/* ── MAIN AREA ── */
+.main{padding:18px;overflow-y:auto;min-width:0;display:flex;flex-direction:column;gap:16px;width:100%;max-width:100%;}
+.main-hdr{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.main-title{font-family:var(--fh);font-size:18px;font-weight:700}
 
 /* ── TABS ── */
-.tabs-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .tabs-wrap::-webkit-scrollbar{display:none}
 .view-tabs{display:flex;gap:3px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:3px;width:max-content}
-.view-tab{padding:6px 13px;border-radius:7px;font-size:12px;cursor:pointer;color:var(--text2);transition:all 0.15s;border:none;background:none;font-family:var(--fb);white-space:nowrap}
+.view-tab{padding:5px 12px;border-radius:7px;font-size:11.5px;cursor:pointer;color:var(--text2);transition:all 0.15s;border:none;background:none;font-family:var(--fb);white-space:nowrap}
 .view-tab.active{background:var(--bg4);color:var(--text);font-weight:500}
-.view-tab:hover:not(.active){color:var(--text)}
 
-/* ── AD BLOCK (before preview) ── */
+/* ── AD MID ── */
 .ad-mid{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;min-height:90px;padding:8px;overflow:hidden}
 
 /* ── META PANEL ── */
-.meta-panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.meta-panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .meta-stat{text-align:center}
-.meta-val{font-family:var(--fh);font-size:17px;font-weight:700;line-height:1;word-break:break-all}
+.meta-val{font-family:var(--fh);font-size:15px;font-weight:700;line-height:1;word-break:break-all}
 .meta-val.good{color:var(--accent3)}
 .meta-val.warn{color:var(--accent2)}
 .meta-val.ok{color:var(--accent)}
 .meta-val.dim{color:var(--text2)}
-.meta-lbl{font-size:10px;color:var(--text3);font-family:var(--fm);margin-top:3px;text-transform:uppercase;letter-spacing:0.05em}
+.meta-lbl{font-size:9.5px;color:var(--text3);font-family:var(--fm);margin-top:3px;text-transform:uppercase;}
 
 /* ── DEVICE CARDS ── */
 .previews-grid{display:grid;gap:16px}
 .previews-grid.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
-.device-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.dcard-hdr{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;border-bottom:1px solid var(--border)}
-.dcard-name{font-family:var(--fh);font-size:13px;font-weight:600;display:flex;align-items:center;gap:7px}
-.dcard-ico{width:18px;height:18px;stroke:var(--text2);fill:none;stroke-width:1.5}
+.device-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;width:100%;}
+.dcard-hdr{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border)}
+.dcard-name{font-family:var(--fh);font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px}
+.dcard-ico{width:16px;height:16px;stroke:var(--text2);fill:none;stroke-width:1.5}
 .dcard-dim{font-family:var(--fm);font-size:10px;color:var(--text3)}
-.dcard-body{padding:14px}
+.dcard-body{padding:12px;overflow-x:auto;}
+
+/* ── COMPARE GRID ── */
+.compare-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:14px; }
+.compare-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:12px; }
+.compare-hdr { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-family:var(--fh); font-weight:700; font-size:13px; }
+.compare-score { background:var(--bg4); padding:2px 8px; border-radius:12px; font-size:11px; font-family:var(--fm); color:var(--accent); }
 
 /* ── EMPTY STATE ── */
-.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:320px;text-align:center;gap:12px}
-.empty-ico{width:58px;height:58px;border-radius:14px;background:var(--bg3);display:flex;align-items:center;justify-content:center}
-.empty-ico svg{width:25px;height:25px;stroke:var(--text3);fill:none;stroke-width:1.5;stroke-linecap:round}
-.empty-title{font-family:var(--fh);font-size:17px;font-weight:600;color:var(--text2)}
-.empty-sub{font-size:13px;color:var(--text3);max-width:260px;line-height:1.6}
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;text-align:center;gap:10px}
+.empty-ico{width:54px;height:54px;border-radius:14px;background:var(--bg3);display:flex;align-items:center;justify-content:center}
+.empty-ico svg{width:24px;height:24px;stroke:var(--text3);fill:none;stroke-width:1.5}
+.empty-title{font-family:var(--fh);font-size:16px;font-weight:600;color:var(--text2)}
+.empty-sub{font-size:12.5px;color:var(--text3);max-width:260px;line-height:1.5}
 
 /* ── FOOTER ── */
-footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--bg2)}
-.footer-left{font-size:12px;color:var(--text3)}
+footer{border-top:1px solid var(--border);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--bg2)}
+.footer-left{font-size:11.5px;color:var(--text3)}
 .footer-left span{color:var(--accent);font-weight:600}
 .footer-right{font-size:11px;color:var(--text3);font-family:var(--fm)}
 
-/* ── YOUTUBE MOCKUPS ── */
-.ytd{background:#0f0f0f;border-radius:6px;overflow:hidden}
-.ytd-bar{background:#0f0f0f;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #272727}
-.ytd-logo{font-size:12px;font-weight:700;color:#ff0000;font-family:sans-serif}
-.ytd-search{background:#121212;border:1px solid #303030;border-radius:2px;padding:4px 10px;font-size:11px;color:#666;width:140px}
-.ytd-body{display:grid;grid-template-columns:1fr 190px}
+/* ── YOUTUBE MOCKUPS (DARK & LIGHT MODE) ── */
+.yt-mockup { transition: background 0.2s, color 0.2s; font-family: Roboto, Arial, sans-serif; width:100%; }
+
+/* Dark Theme */
+.yt-dark { background:#0f0f0f; color:#f1f1f1; }
+.yt-dark .ytd-bar, .yt-dark .mob-bar { background:#0f0f0f; border-color:#272727; }
+.yt-dark .ytd-search { background:#121212; border-color:#303030; color:#aaa; }
+.yt-dark .ytd-side { border-color:#272727; }
+.yt-dark .ytd-mt, .yt-dark .mob-vi .t, .yt-dark .yts-title, .yt-dark .yth-imeta .t { color:#f1f1f1; }
+.yt-dark .ytd-ms, .yt-dark .mob-vi .s, .yt-dark .yts-views, .yt-dark .yts-desc, .yt-dark .yth-imeta .s, .yt-dark .tv-ititle { color:#aaa; }
+.yt-dark .yth-chip { background:#272727; color:#f1f1f1; }
+.yt-dark .yth-chip.a { background:#f1f1f1; color:#0f0f0f; }
+
+/* Light Theme */
+.yt-light { background:#ffffff; color:#0f0f0f; }
+.yt-light .ytd-bar, .yt-light .mob-bar { background:#ffffff; border-color:#e5e5e5; }
+.yt-light .ytd-search { background:#f8f8f8; border-color:#ccc; color:#333; }
+.yt-light .ytd-side { border-color:#e5e5e5; }
+.yt-light .ytd-mt, .yt-light .mob-vi .t, .yt-light .yts-title, .yt-light .yth-imeta .t { color:#0f0f0f; }
+.yt-light .ytd-ms, .yt-light .mob-vi .s, .yt-light .yts-views, .yt-light .yts-desc, .yt-light .yth-imeta .s, .yt-light .tv-ititle { color:#606060; }
+.yt-light .yth-chip { background:#0000000d; color:#0f0f0f; }
+.yt-light .yth-chip.a { background:#0f0f0f; color:#ffffff; }
+
+/* COMMON MOCKUP STYLES */
+.ytd{border-radius:6px;overflow:hidden}
+.ytd-bar{padding:7px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid}
+.ytd-logo{font-size:12px;font-weight:700;color:#ff0000;display:flex;align-items:center;gap:4px}
+.ytd-search{border:1px solid;border-radius:20px;padding:4px 12px;font-size:11px;width:140px}
+.ytd-body{display:grid;grid-template-columns:1fr 180px}
 .ytd-main{padding:10px 12px}
-.ytd-mthumb{border-radius:5px;overflow:hidden;aspect-ratio:16/9;background:#1a1a1a;position:relative}
+.ytd-mthumb{border-radius:6px;overflow:hidden;aspect-ratio:16/9;background:#1a1a1a;position:relative}
 .ytd-mthumb img{width:100%;height:100%;object-fit:cover;display:block}
-.dur{position:absolute;bottom:4px;right:4px;background:rgba(0,0,0,0.85);color:#fff;padding:1px 4px;border-radius:2px;font-family:monospace;font-size:9px}
-.ytd-mmeta{margin-top:7px}
-.ytd-mt{font-size:12px;font-weight:600;color:#f1f1f1;line-height:1.35;margin-bottom:4px;font-family:sans-serif}
-.ytd-ms{font-size:10px;color:#aaa;display:flex;gap:7px;font-family:sans-serif}
-.ytd-side{border-left:1px solid #272727;padding:8px}
+
+/* ACCURATE LIVE BADGE & DURATION BADGE */
+.dur{position:absolute;bottom:4px;right:4px;background:rgba(0,0,0,0.82);color:#fff;padding:1px 4px;border-radius:3px;font-family:var(--fm);font-size:9px;font-weight:500;letter-spacing:0.3px;}
+.badge-live{position:absolute;bottom:4px;right:4px;background:#cc0000;color:#fff;padding:1px 5px;border-radius:3px;font-family:sans-serif;font-size:9px;font-weight:700;letter-spacing:0.3px;display:flex;align-items:center;gap:3px;box-shadow:0 1px 4px rgba(0,0,0,0.4);}
+.badge-live::before { content:'•'; font-size:11px; animation: pulseLive 1.2s infinite; }
+@keyframes pulseLive { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+.ytd-mmeta{margin-top:8px}
+.ytd-mt{font-size:12px;font-weight:600;line-height:1.35;margin-bottom:4px}
+.ytd-ms{font-size:10px;display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.yt-vbadge{display:inline-flex;align-items:center;justify-content:center;width:11px;height:11px;background:#aaa;color:#000;border-radius:50%;font-size:7px;font-weight:bold}
+.yt-newtag{background:#065fd4;color:#fff;font-size:8px;padding:0 3px;border-radius:2px;font-weight:600}
+
+.ytd-side{border-left:1px solid;padding:8px}
 .ytd-si{display:flex;gap:6px;margin-bottom:8px;cursor:pointer}
-.ytd-st{border-radius:3px;overflow:hidden;width:95px;flex-shrink:0;aspect-ratio:16/9;background:#1a1a1a;position:relative}
+.ytd-st{border-radius:4px;overflow:hidden;width:90px;flex-shrink:0;aspect-ratio:16/9;background:#1a1a1a;position:relative}
 .ytd-st img{width:100%;height:100%;object-fit:cover;display:block}
 .ytd-st.hl{outline:2px solid #3ea6ff;outline-offset:-2px}
 .ytd-sm{flex:1;min-width:0}
-.ytd-sm .t{font-size:10px;color:#f1f1f1;line-height:1.3;font-weight:500;margin-bottom:3px;font-family:sans-serif}
-.ytd-sm .s{font-size:9px;color:#aaa;font-family:sans-serif}
-/* MOBILE */
-.mob-wrap{display:flex;justify-content:center}
-.mob-frame{background:#0f0f0f;border-radius:18px;overflow:hidden;width:195px;border:7px solid #1c1c1c;outline:1px solid #333}
-.mob-bar{background:#0f0f0f;padding:10px 8px 5px;display:flex;align-items:center;justify-content:space-between}
-.mob-logo{font-size:10px;font-weight:700;color:#ff0000;font-family:sans-serif}
-.mob-dots{display:flex;gap:5px}
-.mob-dots span{width:3px;height:3px;border-radius:50%;background:#555;display:block}
-.mob-vid{margin-bottom:1px}
+.ytd-sm .t{font-size:10px;line-height:1.3;font-weight:500;margin-bottom:3px}
+.ytd-sm .s{font-size:9px}
+
+/* MOBILE MOCKUP */
+.mob-wrap{display:flex;justify-content:center;width:100%;}
+.mob-frame{border-radius:18px;overflow:hidden;width:210px;max-width:100%;border:7px solid #1c1c1c;outline:1px solid #333}
+.mob-bar{padding:8px 10px 4px;display:flex;align-items:center;justify-content:space-between}
+.mob-logo{font-size:11px;font-weight:700;color:#ff0000}
+.mob-dots{display:flex;gap:4px}
+.mob-dots span{width:3px;height:3px;border-radius:50%;background:#666;display:block}
+.mob-vid{margin-bottom:2px}
 .mob-vthumb{aspect-ratio:16/9;background:#1a1a1a;position:relative}
 .mob-vthumb img{width:100%;height:100%;object-fit:cover;display:block}
 .mob-vthumb.hl{outline:2px solid #3ea6ff;outline-offset:-2px}
-.mob-vmeta{padding:5px 8px 7px;display:flex;gap:7px}
-.mob-av{width:20px;height:20px;border-radius:50%;background:#333;flex-shrink:0;margin-top:1px}
-.mob-vi .t{font-size:9px;color:#f1f1f1;font-weight:500;line-height:1.3;margin-bottom:1px;font-family:sans-serif}
-.mob-vi .s{font-size:8px;color:#aaa;font-family:sans-serif}
-/* TV */
-.tv-outer{background:#111;border-radius:10px;padding:7px;border:5px solid #1a1a1a;outline:1px solid #2a2a2a}
-.tv-screen{background:#0f0f0f;border-radius:4px;overflow:hidden;padding:14px 16px}
-.tv-hero{aspect-ratio:16/9;background:#1a1a1a;border-radius:5px;overflow:hidden;margin-bottom:12px;position:relative}
+.mob-vmeta{padding:6px 8px 8px;display:flex;gap:8px}
+.mob-av{width:22px;height:22px;border-radius:50%;background:var(--accent);color:#000;font-size:10px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;position:relative;}
+.mob-av.live-ring { outline:2px solid #cc0000; outline-offset:1px; }
+.mob-vi .t{font-size:10px;font-weight:500;line-height:1.3;margin-bottom:2px}
+.mob-vi .s{font-size:8.5px;display:flex;align-items:center;gap:3px;flex-wrap:wrap;}
+
+/* TV MOCKUP */
+.tv-outer{background:#111;border-radius:10px;padding:6px;border:4px solid #1a1a1a;outline:1px solid #2a2a2a;width:100%;}
+.tv-screen{border-radius:4px;overflow:hidden;padding:10px 12px}
+.tv-hero{aspect-ratio:16/9;background:#1a1a1a;border-radius:6px;overflow:hidden;margin-bottom:8px;position:relative}
 .tv-hero img{width:100%;height:100%;object-fit:cover;display:block}
-.tv-rlbl{font-size:9px;color:#aaa;margin-bottom:6px;font-family:sans-serif}
-.tv-row{display:flex;gap:7px}
+.tv-rlbl{font-size:9px;margin-bottom:6px;opacity:0.7}
+.tv-row{display:flex;gap:6px}
 .tv-item{flex:1;min-width:0}
-.tv-ithumb{aspect-ratio:16/9;background:#1a1a1a;border-radius:3px;overflow:hidden;position:relative}
+.tv-ithumb{aspect-ratio:16/9;background:#1a1a1a;border-radius:4px;overflow:hidden;position:relative}
 .tv-ithumb img{width:100%;height:100%;object-fit:cover;display:block}
 .tv-ithumb.hl{outline:2px solid #3ea6ff;outline-offset:-2px}
-.tv-ititle{font-size:8px;color:#ccc;margin-top:3px;line-height:1.3;font-family:sans-serif}
-/* SEARCH */
-.yts-wrap{background:#0f0f0f;border-radius:6px;padding:12px}
-.yts-bar{display:flex;align-items:center;gap:7px;background:#121212;border:1px solid #303030;border-radius:3px;padding:6px 12px;margin-bottom:12px}
-.yts-bar span{font-size:11px;color:#666;font-family:sans-serif}
-.yts-results{display:flex;flex-direction:column;gap:10px}
-.yts-result{display:flex;gap:10px}
-.yts-rthumb{width:148px;flex-shrink:0;aspect-ratio:16/9;background:#1a1a1a;border-radius:5px;overflow:hidden;position:relative}
+.tv-ititle{font-size:8px;margin-top:4px;line-height:1.2}
+
+/* REDESIGNED SEARCH MOCKUP (EXACT MATCH TO YOUTUBE MOBILE APP - IMAGE 2) */
+.yts-wrap{border-radius:6px;padding:8px 6px;}
+.yts-bar{display:flex;align-items:center;gap:6px;border:1px solid;border-radius:20px;padding:4px 10px;margin-bottom:10px;}
+.yts-bar span{font-size:10.5px;opacity:0.8;}
+.yts-results{display:flex;flex-direction:column;gap:12px}
+.yts-result{display:flex;gap:10px;align-items:flex-start;}
+.yts-rthumb{width:145px;flex-shrink:0;aspect-ratio:16/9;background:#1a1a1a;border-radius:8px;overflow:hidden;position:relative;}
 .yts-rthumb img{width:100%;height:100%;object-fit:cover;display:block}
 .yts-rthumb.hl{outline:2px solid #3ea6ff;outline-offset:-2px}
-.yts-rmeta .t{font-size:11px;color:#f1f1f1;line-height:1.35;margin-bottom:3px;font-weight:500;font-family:sans-serif}
-.yts-rmeta .s{font-size:10px;color:#aaa;line-height:1.35;font-family:sans-serif}
-/* HOMEPAGE */
-.yth-wrap{background:#0f0f0f;border-radius:6px;padding:12px}
-.yth-chips{display:flex;gap:5px;margin-bottom:12px;overflow:hidden}
-.yth-chip{background:#272727;border-radius:3px;padding:3px 9px;font-size:10px;color:#f1f1f1;white-space:nowrap;font-family:sans-serif}
-.yth-chip.a{background:#f1f1f1;color:#0f0f0f}
+.yts-rmeta{flex:1;min-width:0;}
+.yts-toprow{display:flex;justify-content:space-between;align-items:flex-start;gap:4px;}
+.yts-title{font-size:11px;line-height:1.3;font-weight:500;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.yts-dots{font-size:12px;opacity:0.6;padding:0 2px;line-height:1;}
+.yts-views{font-size:9px;margin-top:2px;margin-bottom:4px;}
+.yts-channel{display:flex;align-items:center;gap:5px;font-size:9.5px;margin-bottom:4px;}
+.yts-avatar{width:14px;height:14px;border-radius:50%;background:#555;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center;font-weight:bold;}
+.yts-desc{font-size:8.5px;line-height:1.3;opacity:0.75;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:4px;}
+
+/* HOMEPAGE MOCKUP */
+.yth-wrap{border-radius:6px;padding:10px}
+.yth-chips{display:flex;gap:5px;margin-bottom:10px;overflow:hidden}
+.yth-chip{border-radius:4px;padding:3px 8px;font-size:9.5px;white-space:nowrap}
 .yth-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .yth-item{cursor:pointer}
 .yth-ithumb{aspect-ratio:16/9;background:#1a1a1a;border-radius:5px;overflow:hidden;position:relative}
 .yth-ithumb img{width:100%;height:100%;object-fit:cover;display:block}
 .yth-ithumb.hl{outline:2px solid #3ea6ff;outline-offset:-2px}
-.yth-imeta .t{font-size:10px;color:#f1f1f1;font-weight:500;line-height:1.3;margin-bottom:1px;font-family:sans-serif;margin-top:4px}
-.yth-imeta .s{font-size:9px;color:#aaa;font-family:sans-serif}
+.yth-imeta .t{font-size:9.5px;font-weight:500;line-height:1.25;margin-bottom:1px;margin-top:3px}
+.yth-imeta .s{font-size:8px;display:flex;align-items:center;gap:3px}
 
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar{width:5px;height:5px}
+/* MODAL & INFO */
+.seo-modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.82); z-index:1000; align-items:center; justify-content:center; padding:1rem; }
+.seo-modal-box { background:#0d0d0f; border:1px solid #2a2a2e; border-radius:12px; max-width:650px; width:100%; max-height:85vh; overflow-y:auto; padding:1.5rem; position:relative; }
+.seo-modal-close { position:sticky; top:0; float:right; background:#1a1a1d; border:1px solid #2a2a2e; color:#ccc; width:28px; height:28px; border-radius:50%; cursor:pointer; z-index:10; }
+.seo-modal-close:hover { background:var(--accent); color:#000; }
+.seo-modal-content h2 { font-size:1.1rem; font-family:var(--fh); color:#fff; margin-bottom:0.6rem; }
+.seo-modal-content h3 { font-size:0.9rem; font-family:var(--fh); color:var(--accent); margin:1rem 0 0.4rem 0; }
+.seo-modal-content p, .seo-modal-content li { color:#ccc; font-size:0.85rem; line-height:1.5; margin-bottom:0.5rem; }
+
+::-webkit-scrollbar{width:4px;height:4px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:3px}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE BREAKPOINTS (FIXED OVERFLOW) */
 @media(max-width:820px){
   :root{--sidebar-w:100%;--header-h:50px}
   .app{grid-template-columns:1fr}
   .sidebar{height:auto;position:static;display:none;border-right:none;border-bottom:1px solid var(--border)}
   .sidebar.mob-open{display:flex}
-  .mob-nav-btn{display:flex}
-  .previews-grid.two-col{grid-template-columns:1fr}
+  .mob-nav-btn{display:inline-flex}
+  .previews-grid.two-col, .compare-grid{grid-template-columns:1fr}
   .meta-panel{grid-template-columns:repeat(2,1fr)}
   .ytd-body{grid-template-columns:1fr}
   .ytd-side{display:none}
   .yth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .main{padding:14px}
+  .main{padding:12px}
 }
 @media(max-width:480px){
-  .logo{font-size:16px}
-  .badge{display:none}
-  .meta-val{font-size:14px}
+  .logo{font-size:15px}
+  .cta-btn{font-size:10px;padding:5px 8px;}
+  .cta-text-full{display:none;}
+  .cta-text-short{display:inline;}
   .main-hdr{flex-direction:column;align-items:flex-start}
-  footer{flex-direction:column;align-items:center;text-align:center}
 }
-.cta-btn{
-  background:var(--accent);
-  color:#0d0d0f;
-  font-family:var(--fh);
-  font-weight:700;
-  font-size:12px;
-  padding:7px 14px;
-  border-radius:8px;
-  text-decoration:none;
-  white-space:nowrap;
-  transition:opacity 0.15s;
+@media(min-width:481px){
+  .cta-text-full{display:inline;}
+  .cta-text-short{display:none;}
 }
-.cta-btn:hover{opacity:0.85}
-@media(max-width:480px){.cta-btn{font-size:11px;padding:6px 10px}}
-
-/* ?-icon button */
-.info-icon-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #1a1a1d;
-    border: 1px solid #2a2a2e;
-    color: #d4ff00;
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.info-icon-btn:hover {
-    background: #d4ff00;
-    color: #000;
-    border-color: #d4ff00;
-}
-
-/* Modal overlay */
-.seo-modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.75);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-}
-
-.seo-modal-box {
-    background: #0d0d0f;
-    border: 1px solid #2a2a2e;
-    border-radius: 12px;
-    max-width: 700px;
-    width: 100%;
-    max-height: 85vh;
-    overflow-y: auto;
-    padding: 2rem;
-    position: relative;
-}
-
-.seo-modal-close {
-    position: sticky;
-    top: 0;
-    float: right;
-    background: #1a1a1d;
-    border: 1px solid #2a2a2e;
-    color: #ccc;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 0.9rem;
-    z-index: 10;
-}
-
-.seo-modal-close:hover {
-    background: #d4ff00;
-    color: #000;
-}
-
-.seo-modal-content section {
-    margin-bottom: 2rem;
-    clear: both;
-}
-
-.seo-modal-content h2 {
-    font-size: 1.25rem;
-    font-family: 'Syne', sans-serif;
-    color: #fff;
-    margin-bottom: 0.8rem;
-}
-
-.seo-modal-content h3 {
-    font-size: 1rem;
-    font-family: 'Syne', sans-serif;
-    color: #d4ff00;
-    margin: 1.2rem 0 0.5rem 0;
-}
-
-.seo-modal-content p {
-    color: #ccc;
-    line-height: 1.7;
-    margin-bottom: 0.8rem;
-    font-size: 0.95rem;
-}
-
-.seo-modal-content ul {
-    margin: 0.5rem 0 0 1.2rem;
-    color: #ccc;
-}
-
-.seo-modal-content li {
-    margin-bottom: 0.6rem;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-.size-reference-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 0.5rem;
-}
-
-.size-reference-table th,
-.size-reference-table td {
-    padding: 0.6rem;
-    text-align: left;
-    border-bottom: 1px solid #2a2a2e;
-    color: #ccc;
-    font-size: 0.85rem;
-}
-
-.size-reference-table th {
-    color: #d4ff00;
-    font-weight: 600;
-}
-
-@media (max-width: 600px) {
-    .seo-modal-box {
-        padding: 1.5rem 1.2rem;
-        max-height: 90vh;
-    }
-  }
 </style>
 </head>
 <body>
@@ -594,26 +514,20 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
 <header>
   <h1 class="logo">Thumbnail<span>Lab</span></h1>
   <div class="hdr-right">
-    <div class="badge">Free Tool</div>
     <a href="https://my-portfolio-127.netlify.app" target="_blank" rel="noopener" class="cta-btn">
-  🎨 Get a Pro Thumbnail
+      🎨 <span class="cta-text-full">Get Pro Thumbnail</span><span class="cta-text-short">Pro Design</span>
     </a>
     <button class="mob-nav-btn" id="mobNavBtn" aria-label="Toggle settings">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       Upload
     </button>
-    <button class="info-icon-btn" onclick="document.getElementById('seoInfoModal').style.display='flex'" aria-label="About this tool">
-    ?
-    </button>
+    <button class="info-icon-btn" onclick="document.getElementById('seoInfoModal').style.display='flex'" aria-label="About this tool">?</button>
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════
-     TOP AD BANNER — Paste Adsterra code here
-═══════════════════════════════════════ -->
+<!-- TOP AD BANNER -->
 <div class="ad-top" id="adTop">
-  <!-- ADSTERRA TOP AD — paste your code below this line -->
-  <script>
+    
+    <script>
   atOptions = {
     'key' : '1bc1d4b55aa0c41ee81a41342c0db434',
     'format' : 'iframe',
@@ -624,61 +538,112 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
 </script>
 <script src="https://www.highperformanceformat.com/1bc1d4b55aa0c41ee81a41342c0db434/invoke.js"></script>
 
-  <!-- end Adsterra top ad -->
 </div>
 
 <!-- Blog Promotion Section -->
-<div style="background: linear-gradient(135deg, #1a1a1d, #151518); border: 1px solid #d4ff00; border-radius: 12px; padding: 1.5rem; margin: 1.5rem; text-align: center;">
-    <h3 style="color: #d4ff00; font-family: 'Syne', sans-serif; font-size: 1.3rem; margin-bottom: 0.8rem;">
-        📚 Thumbnail Mastery Guide
-    </h3>
-    <p style="color: #ccc; margin-bottom: 1.2rem; font-size: 0.95rem;">
-        Learn proven strategies to optimize your thumbnails and boost CTR. Expert guides on sizing, colors, psychology, and design tips.
-    </p>
-    <a href="/blog" style="background: #d4ff00; color: #000; padding: 0.8rem 1.8rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
-        Explore Guides →
-    </a>
+<div style="background: linear-gradient(135deg, #1a1a1d, #151518); border: 1px solid var(--accent); border-radius: 12px; padding: 1rem 1.2rem; margin: 0.8rem 1rem 0; text-align: center;">
+    <h3 style="color: var(--accent); font-family: var(--fh); font-size: 1.1rem; margin-bottom: 0.4rem;">📚 Thumbnail Mastery Guide</h3>
+    <p style="color: #ccc; margin-bottom: 0.8rem; font-size: 0.85rem;">Learn proven strategies to optimize your thumbnails and boost CTR. Expert guides on sizing, colors, psychology, and design tips.</p>
+    <a href="/blog" style="background: var(--accent); color: #000; padding: 0.5rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size:11px; display: inline-block;">Explore Guides →</a>
 </div>
 
 <div class="app">
 
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR CONTROLS -->
   <aside class="sidebar" id="sidebar">
 
+    <!-- VARIANT SELECTOR -->
     <div>
-      <div class="slabel">Upload Thumbnail</div>
+      <div class="slabel"><span>Thumbnail Variants</span> <span style="color:var(--accent); font-size:9px;">A/B Testing</span></div>
+      <div class="variant-picker">
+        <button class="v-btn active" data-v="0" id="vbtn-0">A</button>
+        <button class="v-btn" data-v="1" id="vbtn-1">B</button>
+        <button class="v-btn" data-v="2" id="vbtn-2">C</button>
+        <button class="v-btn" data-v="3" id="vbtn-3">D</button>
+      </div>
+
+      <!-- UPLOAD ZONE -->
       <div class="upload-zone" id="uploadZone">
         <input type="file" id="fileInput" accept="image/*">
         <div class="uico">
           <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
         </div>
-        <p><strong>Click to upload</strong> or drag &amp; drop</p>
-        <div class="hint">JPG, PNG, WEBP &bull; Max 10MB &bull; 1280&times;720 ideal</div>
+        <p><strong id="uploadText">Click to upload Variant A</strong></p>
+        <div class="hint">JPG, PNG, WEBP &bull; Max 10MB</div>
       </div>
     </div>
 
+    <!-- PREVIEW MINI CARD -->
     <div id="thumbPrevWrap" style="display:none">
-      <div class="slabel">Your Thumbnail</div>
-      <div class="tp"><img id="thumbPrevImg" src="" alt="Uploaded thumbnail"></div>
+      <div class="slabel">Active Variant Preview</div>
+      <div class="tp">
+        <img id="thumbPrevImg" src="" alt="Thumbnail preview">
+        <button class="tp-remove" id="removeThumbBtn" title="Remove image">✕</button>
+      </div>
     </div>
 
+    <!-- NICHE SELECTOR -->
     <div>
-      <div class="slabel">Display Options</div>
+      <div class="slabel">Content Niche</div>
+      <select id="nicheSelect" class="select-input">
+        <option value="gaming">🎮 Gaming (High Saturation & Contrast)</option>
+        <option value="finance">💰 Finance & Money (Clean & Sharp)</option>
+        <option value="education">📚 Education & Tech (High Clarity)</option>
+        <option value="vlog">📹 Vlog & Lifestyle (Face & Warmth)</option>
+        <option value="podcast">🎙️ Podcast & Talk (Subject Focus)</option>
+      </select>
+    </div>
+
+    <!-- REALISTIC METADATA CONTROLS -->
+    <div>
+      <div class="slabel">YouTube Metadata Controls</div>
+      
+      <div class="text-input-wrap">
+        <input type="text" id="metaTitle" class="text-input" value="" maxlength="100" placeholder="Enter Video Title...">
+        <span class="char-count" id="titleCharCount">0/100</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px; margin-bottom:8px;">
+        <input type="text" id="metaChannel" class="text-input" value="" placeholder="Channel Name">
+        <input type="text" id="metaViews" class="text-input" value="" placeholder="Views (e.g. 100K views)">
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px; margin-bottom:8px;">
+        <input type="text" id="metaAge" class="text-input" value="" placeholder="Age (e.g. 2 days ago)">
+        <input type="text" id="metaDuration" class="text-input" value="" placeholder="Duration (e.g. 12:34)">
+      </div>
+
+      <div class="checkbox-grid" style="grid-template-columns: 1fr;">
+        <label class="checkbox-item"><input type="checkbox" id="metaLive"> Is LIVE Stream</label>
+      </div>
+    </div>
+
+    <!-- DISPLAY & THEME TOGGLES -->
+    <div>
+      <div class="slabel">Display & Theme Options</div>
       <div class="toggle-row">
-        <label>Highlight your thumbnail</label>
+        <label>YouTube Theme</label>
+        <select id="ytThemeSelect" class="select-input" style="width:110px;">
+          <option value="dark">🌙 Dark</option>
+          <option value="light">☀️ Light</option>
+        </select>
+      </div>
+      <div class="toggle-row">
+        <label>Highlight Active Variant</label>
         <div class="toggle on" id="hlToggle"></div>
       </div>
     </div>
 
     <hr class="divider">
 
+    <!-- CTR ESTIMATOR -->
     <div>
-      <div class="slabel">Estimated CRT Score</div>
+      <div class="slabel">Niche-Calculated CTR Score</div>
       <div class="score-card">
         <div class="score-hdr">
           <div>
             <div class="score-num" id="scoreNum">--</div>
-            <div class="score-lbl">CTR Score</div>
+            <div class="score-lbl">Probable CTR Score</div>
           </div>
           <svg class="score-ring" viewBox="0 0 52 52" fill="none">
             <circle cx="26" cy="26" r="22" stroke="var(--bg4)" stroke-width="4"/>
@@ -694,9 +659,11 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
       </div>
     </div>
 
+    <!-- SUGGESTIONS -->
     <div id="sugsSection" style="display:none">
-      <div class="slabel">Suggestions</div>
+      <div class="slabel">Thumbnail Optimization Suggestions</div>
       <div class="sugs" id="sugsList"></div>
+      
       <div class="ad-mid" id="adMid">
             <script>
   atOptions = {
@@ -710,28 +677,30 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
 <script src="https://www.highperformanceformat.com/112e9c5cd624dd5446408d1d88e1d9e6/invoke.js"></script>
 
       </div>
+      
     </div>
 
   </aside>
 
-  <!-- MAIN -->
+  <!-- MAIN PREVIEW PANEL -->
   <main class="main" id="mainContent">
 
     <div class="main-hdr">
-      <div class="main-title">Device Preview</div>
+      <div class="main-title">Live YouTube Mockup</div>
       <div class="tabs-wrap">
         <div class="view-tabs" id="tabsRow">
-          <button class="view-tab active" data-view="all">All</button>
+          <button class="view-tab active" data-view="all">All Devices</button>
           <button class="view-tab" data-view="desktop">Desktop</button>
           <button class="view-tab" data-view="mobile">Mobile</button>
           <button class="view-tab" data-view="tv">TV</button>
           <button class="view-tab" data-view="search">Search</button>
           <button class="view-tab" data-view="home">Homepage</button>
+          <button class="view-tab" data-view="compare" style="color:var(--accent); font-weight:bold;">⚡ Compare A/B/C/D</button>
         </div>
       </div>
     </div>
 
-    <!-- META STATS -->
+    <!-- META STATS PANEL -->
     <div class="meta-panel">
       <div class="meta-stat"><div class="meta-val dim" id="mres">--</div><div class="meta-lbl">Resolution</div></div>
       <div class="meta-stat"><div class="meta-val dim" id="mratio">--</div><div class="meta-lbl">Aspect Ratio</div></div>
@@ -739,13 +708,10 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
       <div class="meta-stat"><div class="meta-val dim" id="mfmt">--</div><div class="meta-lbl">Format</div></div>
     </div>
 
-    <!-- ═══════════════════════════════════════
-         MID AD BLOCK — Paste Adsterra code here
-         (Shows above device previews)
-    ═══════════════════════════════════════ -->
+    <!-- MID AD BLOCK -->
     <div class="ad-mid" id="adMid">
-      <!-- ADSTERRA MID AD — paste your code below this line -->
-      <script>
+        
+        <script>
   atOptions = {
     'key' : 'd681b91f7da8b8539c88f8536cb35723',
     'format' : 'iframe',
@@ -756,15 +722,14 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
 </script>
 <script src="https://www.highperformanceformat.com/d681b91f7da8b8539c88f8536cb35723/invoke.js"></script>
 
-      <!-- end Adsterra mid ad -->
     </div>
 
-    <!-- PREVIEW VIEWS -->
+    <!-- DEVICE VIEWS CONTAINER -->
     <div id="view-all">
       <div class="previews-grid two-col">
         <div class="device-card">
           <div class="dcard-hdr">
-            <div class="dcard-name"><svg class="dcard-ico" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>YouTube Desktop</div>
+            <div class="dcard-name"><svg class="dcard-ico" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Desktop Preview</div>
             <div class="dcard-dim">1280 x 720</div>
           </div>
           <div class="dcard-body" id="p-desktop"></div>
@@ -785,7 +750,7 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
         </div>
         <div class="device-card">
           <div class="dcard-hdr">
-            <div class="dcard-name"><svg class="dcard-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Search Results</div>
+            <div class="dcard-name"><svg class="dcard-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Desktop Search Results</div>
             <div class="dcard-dim">All Devices</div>
           </div>
           <div class="dcard-body" id="p-search"></div>
@@ -794,7 +759,7 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
     </div>
 
     <div id="view-desktop" style="display:none">
-      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">YouTube Desktop</div><div class="dcard-dim">1280 x 720 thumbnail</div></div><div class="dcard-body" id="p-desktop-s"></div></div>
+      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">Desktop Preview</div><div class="dcard-dim">1280 x 720 thumbnail</div></div><div class="dcard-body" id="p-desktop-s"></div></div>
     </div>
     <div id="view-mobile" style="display:none">
       <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">YouTube Mobile</div><div class="dcard-dim">390 x 844 screen</div></div><div class="dcard-body" id="p-mobile-s"></div></div>
@@ -803,18 +768,24 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
       <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">Smart TV</div><div class="dcard-dim">4K display</div></div><div class="dcard-body" id="p-tv-s"></div></div>
     </div>
     <div id="view-search" style="display:none">
-      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">Search Results</div><div class="dcard-dim">YouTube Search</div></div><div class="dcard-body" id="p-search-s"></div></div>
+      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">Desktop Search Results</div><div class="dcard-dim">YouTube Search</div></div><div class="dcard-body" id="p-search-s"></div></div>
     </div>
     <div id="view-home" style="display:none">
-      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">YouTube Homepage</div><div class="dcard-dim">Desktop feed</div></div><div class="dcard-body" id="p-home-s"></div></div>
+      <div class="device-card"><div class="dcard-hdr"><div class="dcard-name">DeYouTube Homepage</div><div class="dcard-dim">Desktop feed</div></div><div class="dcard-body" id="p-home-s"></div></div>
     </div>
 
+    <!-- COMPARE VIEW -->
+    <div id="view-compare" style="display:none">
+      <div class="compare-grid" id="compareGrid"></div>
+    </div>
+
+    <!-- EMPTY STATE -->
     <div id="emptyState" class="empty" style="display:none">
       <div class="empty-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M10 8l5 3-5 3V8z"/></svg></div>
       <div class="empty-title">Upload a thumbnail to preview</div>
-      <div class="empty-sub">Upload your image to see how it looks across all YouTube surfaces and get a free performance score.</div>
+      <div class="empty-sub">Upload your image to see how it looks across all YouTube surfaces and get a niche-calculated performance score.</div>
     </div>
-
+    
     <div class="ad-mid" id="adMid">
        <script>
   atOptions = {
@@ -832,14 +803,13 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
   </main>
 </div>
 
-<!-- SEO -->
-  <div id="seoInfoModal" class="seo-modal-overlay" onclick="if(event.target===this) this.style.display='none'">
-    <div class="seo-modal-box">
-        <button class="seo-modal-close" onclick="document.getElementById('seoInfoModal').style.display='none'">✕</button>
+<!-- SEO MODAL -->
+<div id="seoInfoModal" class="seo-modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+  <div class="seo-modal-box">
+      <button class="seo-modal-close" onclick="document.getElementById('seoInfoModal').style.display='none'">✕</button>
 
-        <div class="seo-modal-content">
-
-            <section>
+      <div class="seo-modal-content">
+          <section>
                 <h2>Preview YouTube Thumbnails Instantly — Free & No Signup</h2>
                 <p>Upload your thumbnail and see exactly how it renders on Desktop, 
                 Mobile, TV, Search results, and Homepage feed — before you ever hit 
@@ -904,142 +874,235 @@ footer{border-top:1px solid var(--border);padding:18px 24px;display:flex;align-i
                 <p>No. Images are processed instantly in your browser session and 
                 are not stored or shared.</p>
             </section>
-
-        </div>
-    </div>
+      </div>
   </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-right">
-      <span>
-          <a href = "privacy.html">Privacy Policy</a> • 
-          <a href="terms.html">Terms of Service</a>
-      </span>
-    </div>
-    
   <div class="footer-left">Made by <span>Raghav Gupta</span> &mdash; ThumbnailLab &copy; <script>document.write(new Date().getFullYear())</script></div>
-  <div class="footer-right">Free YouTube Thumbnail Preview Tool</div>
-  
+  <div class="footer-right">
+    <span><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a></span>
+  </div>
 </footer>
 
 <script>
+// STATE ARCHITECTURE
 var S = {
-  img: null,
+  activeIdx: 0,
+  variants: [
+    { img: null, fsize: 0, ftype: '', width: 0, height: 0, score: 0, metrics: null },
+    { img: null, fsize: 0, ftype: '', width: 0, height: 0, score: 0, metrics: null },
+    { img: null, fsize: 0, ftype: '', width: 0, height: 0, score: 0, metrics: null },
+    { img: null, fsize: 0, ftype: '', width: 0, height: 0, score: 0, metrics: null }
+  ],
   hl: true,
-  fsize: 0,
-  ftype: ''
+  niche: 'gaming',
+  ytTheme: 'dark',
+  meta: {
+    title: '',
+    channel: '',
+    views: '',
+    age: '',
+    duration: '',
+    isLive: false
+  }
 };
 
-function imgTag(cls) {
-  if (!S.img) return '<div style="width:100%;height:100%;background:#1c1c1c;display:flex;align-items:center;justify-content:center;font-size:9px;color:#444;font-family:monospace">No image</div>';
+function getActiveVariant() { return S.variants[S.activeIdx]; }
+
+function imgTag(cls, customImg) {
+  var targetImg = customImg || getActiveVariant().img;
+  if (!targetImg) {
+    return '<div style="width:100%;height:100%;background:#1c1c1c;display:flex;align-items:center;justify-content:center;font-size:9px;color:#555;font-family:monospace">No Image</div>';
+  }
   var hlStyle = (S.hl && cls) ? 'outline:2px solid #3ea6ff;outline-offset:-2px;' : '';
-  return '<img src="' + S.img + '" style="width:100%;height:100%;object-fit:cover;display:block;' + hlStyle + '">';
+  return '<img src="' + targetImg + '" style="width:100%;height:100%;object-fit:cover;display:block;' + hlStyle + '">';
 }
 
+function getBadgesHTML() {
+  var html = '';
+  if (S.meta.verified) html += '<span class="yt-vbadge" title="Verified">✓</span>';
+  if (S.meta.isNew) html += '<span class="yt-newtag">NEW</span>';
+  return html;
+}
+
+
+// Fallback helper functions for empty inputs
+function getTitle() { return S.meta.title.trim() || 'Your Video Title Here'; }
+function getChannel() { return S.meta.channel.trim() || 'Channel Name'; }
+function getViews() { return S.meta.views.trim() || '100K views'; }
+function getAge() { return S.meta.age.trim() || '2 days ago'; }
+function getDuration() { return S.meta.duration.trim() || '10:00'; }
+
+function getDurationOrLiveBadge() {
+  if (S.meta.isLive) {
+    return '<span class="badge-live">LIVE</span>';
+  }
+  return '<span class="dur">' + getDuration() + '</span>';
+}
+
+function getDisplayViews() {
+  if (S.meta.isLive) {
+    return (S.meta.views.trim() || '9.9K') + ' watching';
+  }
+  return getViews() + ' &bull; ' + getAge();
+}
+
+// MOCKUP BUILDERS
 function buildDesktop(el) {
+  var themeClass = 'yt-mockup yt-' + S.ytTheme;
+  
   var sides = [
     {hl:false, t:'10 Side Hustle Ideas That Actually Work', s:'Business Tips &bull; 45K views'},
-    {hl:true,  t:'Your Video Title Here', s:'Your Channel &bull; -- views'},
+    {hl:true,  t:S.meta.title, s:S.meta.channel + ' ' + (S.meta.verified?'✓':'') + ' &bull; ' + (S.meta.isLive ? '9.9K watching' : S.meta.views)},
     {hl:false, t:'The Truth About Passive Income Online', s:'MoneyMind &bull; 892K views'},
-    {hl:false, t:'I Quit My Job &mdash; Made More Money', s:'FreedomCreator &bull; 2.1M views'},
-    {hl:false, t:'Investing $1000 Best Options Right Now', s:'Finance Lab &bull; 340K views'}
+    {hl:false, t:'I Quit My Job &mdash; Made More Money', s:'FreedomCreator &bull; 2.1M views'}
   ];
+  
   var sidesHTML = '';
   for (var i = 0; i < sides.length; i++) {
     var item = sides[i];
     var hlClass = (item.hl && S.hl) ? ' hl' : '';
     var thumb = item.hl ? imgTag('hl') : '<div style="width:100%;height:100%;background:#2a2a2a;"></div>';
-    sidesHTML += '<div class="ytd-si"><div class="ytd-st' + hlClass + '" style="position:relative">' + thumb + '<span class="dur">8:22</span></div><div class="ytd-sm"><div class="t">' + item.t + '</div><div class="s">' + item.s + '</div></div></div>';
+    sidesHTML += '<div class="ytd-si"><div class="ytd-st' + hlClass + '">' + thumb + (item.hl ? getDurationOrLiveBadge() : '<span class="dur">8:22</span>') + '</div><div class="ytd-sm"><div class="t">' + item.t + '</div><div class="s">' + item.s + '</div></div></div>';
   }
-  el.innerHTML = '<div class="ytd"><div class="ytd-bar"><span class="ytd-logo">&#9654; YouTube</span><span class="ytd-search">Search</span></div><div class="ytd-body"><div class="ytd-main"><div class="ytd-mthumb" style="position:relative">' + imgTag('main') + '<span class="dur">12:34</span></div><div class="ytd-mmeta"><div class="ytd-mt">Your Video Title</div><div class="ytd-ms"><span>Your Channel</span><span>-- views</span><span>just now</span></div></div></div><div class="ytd-side">' + sidesHTML + '</div></div></div>';
+
+  el.innerHTML = '<div class="ytd ' + themeClass + '"><div class="ytd-bar"><span class="ytd-logo">&#9654; YouTube</span><span class="ytd-search">Search</span></div><div class="ytd-body"><div class="ytd-main"><div class="ytd-mthumb">' + imgTag('main') + getDurationOrLiveBadge() + '</div><div class="ytd-mmeta"><div class="ytd-mt">' + S.meta.title + '</div><div class="ytd-ms"><span>' + S.meta.channel + '</span> ' + getBadgesHTML() + ' &bull; <span>' + getDisplayViews() + '</span></div></div></div><div class="ytd-side">' + sidesHTML + '</div></div></div>';
 }
 
 function buildMobile(el) {
+  var themeClass = 'yt-mockup yt-' + S.ytTheme;
+  var liveRing = S.meta.isLive ? ' live-ring' : '';
+
   var vids = [
-    {hl:false, t:'Morning Routine for Productivity'},
-    {hl:true,  t:'Your Video Title Here'},
-    {hl:false, t:'Best Gear Under $50 for Creators'}
+    {hl:false, t:'Morning Routine for Productivity', c:'Creator'},
+    {hl:true,  t:S.meta.title, c:S.meta.channel},
+    {hl:false, t:'Best Gear Under $50 for Creators', c:'Tech Lab'}
   ];
+  
   var feedHTML = '';
   for (var i = 0; i < vids.length; i++) {
     var v = vids[i];
     var hlClass = (v.hl && S.hl) ? ' hl' : '';
     var thumb = v.hl ? imgTag('hl') : '<div style="width:100%;height:100%;background:#222;"></div>';
-    feedHTML += '<div class="mob-vid"><div class="mob-vthumb' + hlClass + '" style="position:relative">' + thumb + '<span class="dur">12:34</span></div><div class="mob-vmeta"><div class="mob-av"></div><div class="mob-vi"><div class="t">' + v.t + '</div><div class="s">' + (v.hl ? 'Your Channel' : 'Creator') + ' &bull; -- views</div></div></div></div>';
+    feedHTML += '<div class="mob-vid"><div class="mob-vthumb' + hlClass + '">' + thumb + (v.hl ? getDurationOrLiveBadge() : '<span class="dur">10:00</span>') + '</div><div class="mob-vmeta"><div class="mob-av' + (v.hl ? liveRing : '') + '">' + v.c.charAt(0) + '</div><div class="mob-vi"><div class="t">' + v.t + '</div><div class="s"><span>' + v.c + '</span> ' + (v.hl ? getBadgesHTML() : '') + ' &bull; ' + (v.hl ? getDisplayViews() : '12K views') + '</div></div></div></div>';
   }
-  el.innerHTML = '<div class="mob-wrap"><div class="mob-frame"><div class="mob-bar"><span class="mob-logo">&#9654; YouTube</span><div class="mob-dots"><span></span><span></span><span></span></div></div><div class="mob-feed">' + feedHTML + '</div></div></div>';
+
+  el.innerHTML = '<div class="mob-wrap"><div class="mob-frame ' + themeClass + '"><div class="mob-bar"><span class="mob-logo">&#9654; YouTube</span><div class="mob-dots"><span></span><span></span><span></span></div></div><div class="mob-feed">' + feedHTML + '</div></div></div>';
 }
 
 function buildTV(el) {
+  var themeClass = 'yt-mockup yt-' + S.ytTheme;
   var items = [
-    {hl:true,  t:'Your Video Title Here'},
+    {hl:true,  t:S.meta.title},
     {hl:false, t:'Best Cameras for YouTube 2025'},
     {hl:false, t:'Studio Setup on a Budget'},
     {hl:false, t:'How to Grow to 100K Subs'}
   ];
+  
   var rowHTML = '';
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
     var hlClass = (item.hl && S.hl) ? ' hl' : '';
     var thumb = item.hl ? imgTag('hl') : '<div style="width:100%;height:100%;background:#222;"></div>';
-    rowHTML += '<div class="tv-item"><div class="tv-ithumb' + hlClass + '" style="position:relative">' + thumb + '</div><div class="tv-ititle">' + item.t + '</div></div>';
+    rowHTML += '<div class="tv-item"><div class="tv-ithumb' + hlClass + '">' + thumb + '</div><div class="tv-ititle">' + item.t + '</div></div>';
   }
-  el.innerHTML = '<div class="tv-outer"><div class="tv-screen"><div class="tv-hero" style="position:relative">' + imgTag('hero') + '<span class="dur">12:34</span></div><div class="tv-rlbl">Recommended</div><div class="tv-row">' + rowHTML + '</div></div></div>';
+
+  el.innerHTML = '<div class="tv-outer"><div class="tv-screen ' + themeClass + '"><div class="tv-hero">' + imgTag('hero') + getDurationOrLiveBadge() + '</div><div class="tv-rlbl">Recommended for You</div><div class="tv-row">' + rowHTML + '</div></div></div>';
 }
 
+// REDESIGNED SEARCH RESULT (MATCHES EXACT YOUTUBE SEARCH MOBILE APP UI)
 function buildSearch(el) {
+  var themeClass = 'yt-mockup yt-' + S.ytTheme;
+  var liveRing = S.meta.isLive ? ' live-ring' : '';
+
   var results = [
-    {hl:false, t:'5 Realistic Ways to Make Money Online in 2025', s:'MoneyTalks &bull; 3.4M views &bull; 2 months ago'},
-    {hl:true,  t:'Your Video Title Here', s:'Your Channel &bull; -- views &bull; just now'},
-    {hl:false, t:'I Tried 10 Make Money Methods &mdash; The Truth', s:'HonestReviews &bull; 1.1M views &bull; 5 months ago'},
-    {hl:false, t:'Make Money Online: Beginner Guide 2025', s:'EarnOnline &bull; 780K views &bull; 1 year ago'}
+    {hl:true,  t:S.meta.title, c:S.meta.channel, v:getDisplayViews(), desc:'Cute DIY Stationery Set ! School DIY Crafts & Ideas. Dive into fun DIYs and handmade pencil box tutorials!'},
+    {hl:false, t:'I Made My Own Sticker Book! 📖💡', c:'Shifa Craft', v:'1.5 lakh views &bull; 9 days ago', desc:'Welcome to my channel (Shifa Craft)! Dive into fun DIYs and creative methods to make sticker books.'},
+    {hl:false, t:'DIY Kawaii Phone Notebook / No Glue No Scissors', c:'Artistic Zeyo', v:'9.7K views &bull; 2 days ago', desc:'Easy Craft ideas / School project materials used...'}
   ];
+  
   var html = '';
   for (var i = 0; i < results.length; i++) {
     var r = results[i];
     var hlClass = (r.hl && S.hl) ? ' hl' : '';
     var thumb = r.hl ? imgTag('hl') : '<div style="width:100%;height:100%;background:#1a1a1a;"></div>';
-    html += '<div class="yts-result"><div class="yts-rthumb' + hlClass + '" style="position:relative">' + thumb + '<span class="dur">12:34</span></div><div class="yts-rmeta"><div class="t">' + r.t + '</div><div class="s">' + r.s + '</div></div></div>';
+    
+    html += '<div class="yts-result">' +
+              '<div class="yts-rthumb' + hlClass + '">' + thumb + (r.hl ? getDurationOrLiveBadge() : '<span class="dur">18:58</span>') + '</div>' +
+              '<div class="yts-rmeta">' +
+                '<div class="yts-toprow">' +
+                  '<div class="yts-title">' + r.t + '</div>' +
+                  '<div class="yts-dots">⋮</div>' +
+                '</div>' +
+                '<div class="yts-views">' + r.v + '</div>' +
+                '<div class="yts-channel">' +
+                  '<div class="yts-avatar' + (r.hl ? liveRing : '') + '">' + r.c.charAt(0) + '</div>' +
+                  '<span>' + r.c + '</span>' +
+                  (r.hl ? getBadgesHTML() : '<span class="yt-vbadge">✓</span>') +
+                '</div>' +
+                '<div class="yts-desc">' + r.desc + '</div>' +
+              '</div>' +
+            '</div>';
   }
-  el.innerHTML = '<div class="yts-wrap"><div class="yts-bar"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><span>search results</span></div><div class="yts-results">' + html + '</div></div>';
+
+  el.innerHTML = '<div class="yts-wrap ' + themeClass + '"><div class="yts-bar"><span>🔍 ' + S.meta.title.substring(0,25) + '...</span></div><div class="yts-results">' + html + '</div></div>';
 }
 
 function buildHome(el) {
+  var themeClass = 'yt-mockup yt-' + S.ytTheme;
   var items = [
-    {hl:true,  t:'Your Video Title', s:'Your Channel'},
-    {hl:false, t:'5 Budget Travel Hacks', s:'WanderMore &bull; 2.3M'},
-    {hl:false, t:'Best Keyboards 2025', s:'TechDesk &bull; 890K'},
-    {hl:false, t:'Learn Python in 60 Min', s:'CodeFast &bull; 4.1M'},
-    {hl:false, t:'Home Gym Under $300', s:'FitLife &bull; 1.5M'},
-    {hl:false, t:'Top VS Code Extensions', s:'DevTips &bull; 3.2M'},
-    {hl:false, t:'Perfect Morning Routine', s:'Mindful &bull; 700K'},
-    {hl:false, t:'Cinematic iPhone Tips', s:'ViralVideo &bull; 2.8M'}
+    {hl:true,  t:S.meta.title, s:S.meta.channel},
+    {hl:false, t:'5 Budget Travel Hacks', s:'WanderMore'},
+    {hl:false, t:'Best Keyboards 2025', s:'TechDesk'},
+    {hl:false, t:'Learn Python in 60 Min', s:'CodeFast'}
   ];
-  var chips = ['All','Music','Gaming','Programming','Finance','Travel'];
+  
+  var chips = ['All', S.niche.toUpperCase(), 'Gaming', 'Podcasts', 'Tech'];
   var chipsHTML = '';
   for (var c = 0; c < chips.length; c++) {
     chipsHTML += '<span class="yth-chip' + (c === 0 ? ' a' : '') + '">' + chips[c] + '</span>';
   }
+  
   var gridHTML = '';
   for (var j = 0; j < items.length; j++) {
     var item = items[j];
     var hlClass = (item.hl && S.hl) ? ' hl' : '';
     var thumb = item.hl ? imgTag('hl') : '<div style="width:100%;height:100%;background:#1a1a1a;"></div>';
-    gridHTML += '<div class="yth-item"><div class="yth-ithumb' + hlClass + '" style="position:relative">' + thumb + '<span class="dur">12:34</span></div><div class="yth-imeta"><div class="t">' + item.t + '</div><div class="s">' + item.s + ' views</div></div></div>';
+    gridHTML += '<div class="yth-item"><div class="yth-ithumb' + hlClass + '">' + thumb + (item.hl ? getDurationOrLiveBadge() : '<span class="dur">12:34</span>') + '</div><div class="yth-imeta"><div class="t">' + item.t + '</div><div class="s">' + item.s + ' ' + (item.hl?getBadgesHTML():'') + '</div></div></div>';
   }
-  el.innerHTML = '<div class="yth-wrap"><div class="yth-chips">' + chipsHTML + '</div><div class="yth-grid">' + gridHTML + '</div></div>';
+
+  el.innerHTML = '<div class="yth-wrap ' + themeClass + '"><div class="yth-chips">' + chipsHTML + '</div><div class="yth-grid">' + gridHTML + '</div></div>';
 }
 
+function buildCompareView(el) {
+  var html = '';
+  var labels = ['A', 'B', 'C', 'D'];
+  for (var i = 0; i < 4; i++) {
+    var v = S.variants[i];
+    var thumb = v.img ? imgTag('', v.img) : '<div style="aspect-ratio:16/9;background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:#555;font-size:11px;">Variant ' + labels[i] + ' Empty</div>';
+    var scoreDisp = v.score ? v.score + '/100 CTR' : 'No Data';
+    html += '<div class="compare-card"><div class="compare-hdr"><span>Variant ' + labels[i] + '</span><span class="compare-score">' + scoreDisp + '</span></div><div style="aspect-ratio:16/9;border-radius:6px;overflow:hidden;margin-bottom:8px;">' + thumb + '</div><div style="font-size:11px;color:var(--text2);font-weight:600;margin-bottom:2px;">' + S.meta.title + '</div><div style="font-size:10px;color:var(--text3);">' + S.meta.channel + ' &bull; ' + getDisplayViews() + '</div></div>';
+  }
+  el.innerHTML = html;
+}
+
+// RENDER ALL VIEWS
 function renderAll() {
-  var hasImg = !!S.img;
+  var activeV = getActiveVariant();
+  var hasImg = !!activeV.img;
+  
   document.getElementById('emptyState').style.display = hasImg ? 'none' : 'flex';
-  var allViews = ['all','desktop','mobile','tv','search','home'];
+  
   var currentView = document.querySelector('.view-tab.active').getAttribute('data-view');
+  var allViews = ['all','desktop','mobile','tv','search','home','compare'];
+  
   for (var i = 0; i < allViews.length; i++) {
     var el = document.getElementById('view-' + allViews[i]);
     if (el) el.style.display = (allViews[i] === currentView) ? '' : 'none';
   }
+
   if (currentView === 'all') {
     buildDesktop(document.getElementById('p-desktop'));
     buildMobile(document.getElementById('p-mobile'));
@@ -1055,20 +1118,48 @@ function renderAll() {
     buildSearch(document.getElementById('p-search-s'));
   } else if (currentView === 'home') {
     buildHome(document.getElementById('p-home-s'));
+  } else if (currentView === 'compare') {
+    buildCompareView(document.getElementById('compareGrid'));
   }
-  if (hasImg) analyzeImage();
+
+  // Update variant UI indicators
+  for (var k = 0; k < 4; k++) {
+    var vbtn = document.getElementById('vbtn-' + k);
+    if (S.variants[k].img) vbtn.classList.add('has-img');
+    else vbtn.classList.remove('has-img');
+  }
+
+  if (hasImg) {
+    document.getElementById('thumbPrevWrap').style.display = '';
+    document.getElementById('thumbPrevImg').src = activeV.img;
+    if (activeV.metrics) {
+      updateScoreUI(activeV.score, activeV.metrics);
+      updateMetaUI(activeV);
+    } else {
+      analyzeImage(activeV);
+    }
+  } else {
+    document.getElementById('thumbPrevWrap').style.display = 'none';
+    resetScoreUI();
+  }
 }
 
-function analyzeImage() {
+// IMAGE ANALYSIS & CTR ALGORITHM
+function analyzeImage(vObj) {
   var img = new Image();
   img.onload = function() {
+    vObj.width = img.naturalWidth;
+    vObj.height = img.naturalHeight;
+    
     var canvas = document.createElement('canvas');
     canvas.width = 100; canvas.height = 56;
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, 100, 56);
+    
     var data = ctx.getImageData(0, 0, 100, 56).data;
     var rSum=0, gSum=0, bSum=0, n=data.length/4;
     var minL=255, maxL=0, satSum=0;
+    
     for (var i=0; i<data.length; i+=4) {
       var r=data[i], g=data[i+1], b=data[i+2];
       rSum+=r; gSum+=g; bSum+=b;
@@ -1078,123 +1169,217 @@ function analyzeImage() {
       if (lum>maxL) maxL=lum;
       satSum+=(mx===0 ? 0 : (mx-mn)/mx);
     }
-    var brightness=Math.round((0.299*rSum/n+0.587*gSum/n+0.114*bSum/n)/255*100);
-    var contrast=Math.round((maxL-minL)/255*100);
-    var saturation=Math.round(satSum/n*100);
-    var clarity=Math.min(100,Math.round(contrast*0.6+brightness*0.2+saturation*0.2));
-    var overall=Math.round(contrast*0.35+brightness*0.2+saturation*0.25+clarity*0.2);
-    setScore(overall,contrast,brightness,saturation,clarity);
-    buildSuggestions(brightness,contrast,saturation);
-    updateMeta(img.naturalWidth,img.naturalHeight);
+    
+    var bright = Math.round((0.299*rSum/n + 0.587*gSum/n + 0.114*bSum/n)/255*100);
+    var contrast = Math.round((maxL-minL)/255*100);
+    var sat = Math.round(satSum/n*100);
+    var clarity = Math.min(100, Math.round(contrast*0.5 + bright*0.25 + sat*0.25));
+    
+    vObj.metrics = { contrast: contrast, bright: bright, sat: sat, clarity: clarity };
+    vObj.score = calculateNicheCTR(vObj.metrics, S.niche);
+    
+    updateScoreUI(vObj.score, vObj.metrics);
+    updateMetaUI(vObj);
   };
-  img.src = S.img;
+  img.src = vObj.img;
 }
 
-function setScore(s,contrast,bright,sat,clarity) {
-  document.getElementById('scoreNum').textContent = s;
+function calculateNicheCTR(m, niche) {
+  var c = m.contrast, b = m.bright, s = m.sat, cl = m.clarity;
+  var score = 0;
+  
+  switch(niche) {
+    case 'gaming': score = c*0.35 + s*0.35 + cl*0.2 + b*0.1; break;
+    case 'finance': score = (c*0.40 + cl*0.35 + b*0.25) - (s > 70 ? (s - 70) * 0.5 : 0); break;
+    case 'education': score = cl*0.45 + c*0.35 + s*0.2; break;
+    case 'vlog': score = s*0.30 + cl*0.30 + b*0.25 + c*0.15; break;
+    case 'podcast': score = cl*0.40 + c*0.30 + b*0.15 + s*0.15; break;
+    default: score = c*0.35 + b*0.20 + s*0.25 + cl*0.20;
+  }
+  return Math.max(15, Math.min(99, Math.round(score)));
+}
+
+function updateScoreUI(score, m) {
+  document.getElementById('scoreNum').textContent = score;
   var arc = document.getElementById('scoreArc');
-  arc.style.strokeDashoffset = 138.2 - (138.2*s/100);
-  arc.style.stroke = s>75 ? 'var(--accent3)' : (s>50 ? 'var(--accent)' : 'var(--accent2)');
-  function sb(id,val) {
-    document.getElementById('sb-'+id).style.width=val+'%';
-    document.getElementById('sp-'+id).textContent=Math.round(val)+'%';
+  arc.style.strokeDashoffset = 138.2 - (138.2 * score / 100);
+  arc.style.stroke = score > 75 ? 'var(--accent3)' : (score > 50 ? 'var(--accent)' : 'var(--accent2)');
+  
+  function sb(id, val) {
+    document.getElementById('sb-' + id).style.width = val + '%';
+    document.getElementById('sp-' + id).textContent = Math.round(val) + '%';
   }
-  sb('contrast',contrast); sb('bright',bright); sb('sat',sat); sb('clarity',clarity);
-  document.getElementById('sugsSection').style.display='';
+  sb('contrast', m.contrast); sb('bright', m.bright); sb('sat', m.sat); sb('clarity', m.clarity);
+  buildSuggestions(m, S.niche);
+  document.getElementById('sugsSection').style.display = '';
 }
 
-function buildSuggestions(bright,contrast,sat) {
+function resetScoreUI() {
+  document.getElementById('scoreNum').textContent = '--';
+  document.getElementById('scoreArc').style.strokeDashoffset = 138.2;
+  ['contrast','bright','sat','clarity'].forEach(function(id){
+    document.getElementById('sb-' + id).style.width = '0%';
+    document.getElementById('sp-' + id).textContent = '--';
+  });
+  document.getElementById('sugsSection').style.display = 'none';
+}
+
+function buildSuggestions(m, niche) {
   var list = [];
-  if (contrast<40) {
-    list.push({t:'Low contrast detected',m:'High-contrast thumbnails stand out in feeds. Try a dark/light background split.',type:'warn'});
+  var activeV = getActiveVariant();
+  
+  // 1. Contrast Check
+  if (m.contrast >= 45) {
+    list.push({t:'Optimal Contrast', m:'High contrast makes text & subject pop on all feeds.', type:'good'});
   } else {
-    list.push({t:'Contrast looks good',m:'Strong contrast helps visibility in both light and dark mode feeds.',type:'good'});
+    list.push({t:'Low Contrast Detected', m:'Boost contrast between background and subject for better legibility.', type:'warn'});
   }
-  if (bright<30) {
-    list.push({t:'Image is quite dark',m:'Dark thumbnails can get lost in the feed. Boost brightness or add a bright foreground.',type:'warn'});
-  } else if (bright>85) {
-    list.push({t:'Image may be overexposed',m:'Very bright thumbnails blend into white UI. Adding dark elements will help.',type:'warn'});
+
+  // 2. Brightness Check
+  if (m.bright < 30) {
+    list.push({t:'Thumbnail Too Dark', m:'Dark thumbnails get lost on YouTube dark mode. Boost lighting.', type:'warn'});
+  } else if (m.bright > 85) {
+    list.push({t:'Overexposed Image', m:'Excessive brightness washes out details on light theme.', type:'warn'});
   } else {
-    list.push({t:'Good brightness level',m:'Brightness is in the optimal range for YouTube feeds.',type:'good'});
+    list.push({t:'Balanced Brightness', m:'Brightness level is well-optimized for both dark/light feeds.', type:'good'});
   }
-  if (sat<25) {
-    list.push({t:'Low saturation',m:'Vibrant saturated colors attract more clicks. Boost saturation in your editor.',type:'warn'});
+
+  // 3. Saturation & Niche Alignment
+  if ((niche === 'gaming' || niche === 'vlog') && m.sat < 45) {
+    list.push({t:'Low Saturation for ' + niche.toUpperCase(), m:niche.toUpperCase() + ' audiences prefer vibrant, high-saturation colors (+15% sat).', type:'warn'});
+  } else if ((niche === 'finance' || niche === 'education') && m.sat > 70) {
+    list.push({t:'High Saturation Warning', m:'Mute colors slightly for better credibility in ' + niche + '.', type:'warn'});
   } else {
-    list.push({t:'Saturation is vibrant',m:'Colorful thumbnails outperform muted competition in the feed.',type:'good'});
+    list.push({t:'Niche Color Match', m:'Color saturation perfectly matches ' + niche.toUpperCase() + ' audience expectations.', type:'good'});
   }
-  list.push({t:'Faces boost CTR by ~38%',m:'Thumbnails with a human face showing strong emotion outperform faceless ones.',type:'info'});
-  list.push({t:'Use 3-4 colours max',m:'A limited, high-contrast palette avoids visual clutter and is more clickable.',type:'info'});
+
+  // 4. Clarity & Edge Sharpness
+  if (m.clarity >= 50) {
+    list.push({t:'Sharp Visual Clarity', m:'High focal clarity helps viewers recognize the subject quickly.', type:'good'});
+  } else {
+    list.push({t:'Low Visual Clarity', m:'Edges look soft. Add subtle outline glows or sharpen the subject.', type:'warn'});
+  }
+
+  // 5. Aspect Ratio Verification
+  if (activeV.width && activeV.height) {
+    var ratio = activeV.width / activeV.height;
+    if (Math.abs(ratio - 16/9) < 0.05) {
+      list.push({t:'Standard 16:9 Aspect Ratio', m:'Ideal YouTube dimensions (no black bars or awkward cropping).', type:'good'});
+    } else {
+      list.push({t:'Non-Standard Aspect Ratio', m:'Image ratio is ' + ratio.toFixed(2) + '. Use 16:9 (1280x720) to prevent black bars.', type:'warn'});
+    }
+  }
+
+  // 6. Mobile Readability Notice
+  list.push({t:'Mobile Scaling Check', m:'Over 70% of views come from mobile. Ensure main text is readable on small viewports.', type:'info'});
+
   var s = document.getElementById('sugsList');
   var html = '';
-  for (var i=0; i<list.length; i++) {
+  for (var i = 0; i < list.length; i++) {
     var item = list[i];
-    var cls = item.type==='good' ? 'good' : (item.type==='warn' ? 'warn' : 'info');
-    var ico = item.type==='good' ? 'g' : (item.type==='warn' ? 'w' : 'i');
-    var col = item.type==='good' ? 'var(--accent3)' : (item.type==='warn' ? 'var(--accent2)' : 'var(--accent)');
-    var path = item.type==='good' ? 'M20 6L9 17l-5-5' : (item.type==='warn' ? 'M12 9v4M12 17h.01' : 'M13 16h-1v-4h-1m1-4h.01');
+    var cls = item.type === 'good' ? 'good' : (item.type === 'warn' ? 'warn' : 'info');
+    var ico = item.type === 'good' ? 'g' : (item.type === 'warn' ? 'w' : 'i');
+    var col = item.type === 'good' ? 'var(--accent3)' : (item.type === 'warn' ? 'var(--accent2)' : 'var(--accent)');
+    var path = item.type === 'good' ? 'M20 6L9 17l-5-5' : (item.type === 'warn' ? 'M12 9v4M12 17h.01' : 'M13 16h-1v-4h-1m1-4h.01');
     html += '<div class="sug '+cls+'"><div class="sug-ico '+ico+'"><svg viewBox="0 0 24 24" stroke="'+col+'"><path d="'+path+'"/></svg></div><div class="sug-txt"><strong>'+item.t+'</strong>'+item.m+'</div></div>';
   }
   s.innerHTML = html;
 }
 
-function updateMeta(w,h) {
-  var res=document.getElementById('mres');
-  res.textContent=w+'x'+h;
-  res.className='meta-val '+(w>=1280&&h>=720?'good':'warn');
-  var ratio=w/h, isGood=Math.abs(ratio-16/9)<0.05;
-  var rat=document.getElementById('mratio');
-  rat.textContent=isGood?'16:9':ratio.toFixed(2);
-  rat.className='meta-val '+(isGood?'good':'warn');
-  var kb=Math.round(S.fsize/1024);
-  var msz=document.getElementById('msize');
-  msz.textContent=kb>1024?Math.round(kb/1024)+'MB':kb+'KB';
-  msz.className='meta-val '+(kb<=2048?'ok':'warn');
-  var parts=S.ftype.split('/');
-  var mfmt=document.getElementById('mfmt');
-  mfmt.textContent=parts.length>1?parts[1].toUpperCase():'--';
-  mfmt.className='meta-val dim';
+function updateMetaUI(vObj) {
+  var res = document.getElementById('mres');
+  res.textContent = vObj.width + 'x' + vObj.height;
+  res.className = 'meta-val ' + (vObj.width >= 1280 && vObj.height >= 720 ? 'good' : 'warn');
+  
+  var ratio = vObj.width / vObj.height;
+  var isGood = Math.abs(ratio - 16/9) < 0.05;
+  var rat = document.getElementById('mratio');
+  rat.textContent = isGood ? '16:9' : ratio.toFixed(2);
+  rat.className = 'meta-val ' + (isGood ? 'good' : 'warn');
+  
+  var kb = Math.round(vObj.fsize / 1024);
+  var msz = document.getElementById('msize');
+  msz.textContent = kb > 1024 ? Math.round(kb/1024) + 'MB' : kb + 'KB';
+  msz.className = 'meta-val ' + (kb <= 2048 ? 'ok' : 'warn');
+  
+  var parts = vObj.ftype.split('/');
+  var mfmt = document.getElementById('mfmt');
+  mfmt.textContent = parts.length > 1 ? parts[1].toUpperCase() : '--';
+  mfmt.className = 'meta-val dim';
 }
 
+// BIND EVENT LISTENERS
 function handleFile(file) {
-  if (!file||!file.type.startsWith('image/')) return;
-  S.fsize=file.size; S.ftype=file.type;
-  var reader=new FileReader();
-  reader.onload=function(e) {
-    S.img=e.target.result;
-    document.getElementById('thumbPrevWrap').style.display='';
-    document.getElementById('thumbPrevImg').src=e.target.result;
+  if (!file || !file.type.startsWith('image/')) return;
+  var activeV = getActiveVariant();
+  activeV.fsize = file.size; activeV.ftype = file.type;
+  
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    activeV.img = e.target.result;
+    activeV.metrics = null;
     renderAll();
   };
   reader.readAsDataURL(file);
 }
 
-var fileInput=document.getElementById('fileInput');
-var uploadZone=document.getElementById('uploadZone');
-fileInput.addEventListener('change',function(e){handleFile(e.target.files[0]);});
-uploadZone.addEventListener('dragover',function(e){e.preventDefault();uploadZone.classList.add('drag-over');});
-uploadZone.addEventListener('dragleave',function(){uploadZone.classList.remove('drag-over');});
-uploadZone.addEventListener('drop',function(e){e.preventDefault();uploadZone.classList.remove('drag-over');handleFile(e.dataTransfer.files[0]);});
+document.getElementById('fileInput').addEventListener('change', function(e){ handleFile(e.target.files[0]); });
+var uploadZone = document.getElementById('uploadZone');
+uploadZone.addEventListener('dragover', function(e){ e.preventDefault(); uploadZone.classList.add('drag-over'); });
+uploadZone.addEventListener('dragleave', function(){ uploadZone.classList.remove('drag-over'); });
+uploadZone.addEventListener('drop', function(e){ e.preventDefault(); uploadZone.classList.remove('drag-over'); handleFile(e.dataTransfer.files[0]); });
 
-document.getElementById('hlToggle').addEventListener('click',function(){
-  S.hl=!S.hl;
-  this.classList.toggle('on',S.hl);
+document.getElementById('removeThumbBtn').addEventListener('click', function(){
+  var activeV = getActiveVariant();
+  activeV.img = null; activeV.metrics = null;
   renderAll();
 });
 
-var tabs=document.querySelectorAll('.view-tab');
-for (var ti=0;ti<tabs.length;ti++) {
-  tabs[ti].addEventListener('click',function(){
-    var all=document.querySelectorAll('.view-tab');
-    for (var k=0;k<all.length;k++) all[k].classList.remove('active');
-    this.classList.add('active');
+var vBtns = document.querySelectorAll('.v-btn');
+vBtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    vBtns.forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    S.activeIdx = parseInt(btn.getAttribute('data-v'));
+    document.getElementById('uploadText').textContent = 'Click to upload Variant ' + btn.textContent;
     renderAll();
   });
-}
+});
 
-document.getElementById('mobNavBtn').addEventListener('click',function(){
+document.getElementById('nicheSelect').addEventListener('change', function(e){
+  S.niche = e.target.value;
+  S.variants.forEach(function(v){ if (v.metrics) v.score = calculateNicheCTR(v.metrics, S.niche); });
+  renderAll();
+});
+
+document.getElementById('ytThemeSelect').addEventListener('change', function(e){ S.ytTheme = e.target.value; renderAll(); });
+document.getElementById('hlToggle').addEventListener('click', function(){ S.hl = !S.hl; this.classList.toggle('on', S.hl); renderAll(); });
+
+document.getElementById('metaTitle').addEventListener('input', function(e){
+  S.meta.title = e.target.value || 'Video Title';
+  document.getElementById('titleCharCount').textContent = e.target.value.length + '/100';
+  renderAll();
+});
+document.getElementById('metaChannel').addEventListener>'input', function(e){ S.meta.channel = e.target.value || 'Channel'; renderAll(); });
+document.getElementById('metaViews').addEventListener('input', function(e){ S.meta.views = e.target.value || '0 views'; renderAll(); });
+document.getElementById('metaAge').addEventListener('input', function(e){ S.meta.age = e.target.value || 'Just now'; renderAll(); });
+document.getElementById('metaDuration').addEventListener('input', function(e){ S.meta.duration = e.target.value || '0:00'; renderAll(); });
+document.getElementById('metaLive').addEventListener('change', function(e){ S.meta.isLive = e.target.checked; renderAll(); });
+
+var tabs = document.querySelectorAll('.view-tab');
+tabs.forEach(function(tab){
+  tab.addEventListener('click', function(){
+    tabs.forEach(function(t){ t.classList.remove('active'); });
+    tab.classList.add('active');
+    renderAll();
+  });
+});
+
+document.getElementById('mobNavBtn').addEventListener('click', function(){
   document.getElementById('sidebar').classList.toggle('mob-open');
 });
 
+// INITIAL RENDER
 renderAll();
 </script>
 </body>
